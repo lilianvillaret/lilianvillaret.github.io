@@ -23,7 +23,9 @@ const MIME = {
 };
 
 const server = http.createServer((req, res) => {
-  let filePath = path.join(PUBLIC, req.url === '/' ? 'index.html' : req.url);
+  // Strip query string before resolving file path
+  const urlPath = req.url.split('?')[0];
+  let filePath = path.join(PUBLIC, urlPath === '/' ? 'index.html' : urlPath);
   filePath = path.normalize(filePath);
 
   // Prevent path traversal
