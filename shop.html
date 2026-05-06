@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин — Lilian Villaret</title>
+  <meta name="description" content="Интерьерные картины и кастомная одежда. Готовые работы и на заказ.">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .shop-hero {
+      padding: 100px 20px 48px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--sky-light) 0%, var(--bg) 40%, var(--violet-light) 100%);
+    }
+    .shop-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--violet), var(--sky), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .shop-hero p {
+      color: var(--grey);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 32px 20px 16px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 10px 24px;
+      border: 2px solid var(--sky-light);
+      border-radius: 50px;
+      background: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--grey);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn:hover {
+      border-color: var(--violet);
+      color: var(--violet);
+    }
+    .filter-btn.active {
+      background: var(--violet);
+      border-color: var(--violet);
+      color: var(--white);
+    }
+
+    /* Grid */
+    .shop-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Card */
+    .product {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: all 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+    .product__img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .product__img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .product:hover .product__img {
+      transform: scale(1.04);
+    }
+    .product__badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge--stock {
+      background: var(--green);
+      color: var(--white);
+    }
+    .badge--order {
+      background: var(--violet);
+      color: var(--white);
+    }
+    .product__body {
+      padding: 20px;
+    }
+    .product__cat {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--violet);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .product__title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .product__desc {
+      font-size: 0.85rem;
+      color: var(--grey);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .product__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .product__price {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .product__price small {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--grey);
+    }
+    .product__btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .btn-stock {
+      background: var(--green);
+      color: var(--white);
+    }
+    .btn-stock:hover {
+      background: #7aad8e;
+      transform: translateY(-1px);
+    }
+    .btn-order {
+      background: var(--violet);
+      color: var(--white);
+    }
+    .btn-order:hover {
+      background: var(--violet-deep);
+      transform: translateY(-1px);
+    }
+
+    /* Custom order banner */
+    .custom-banner {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .custom-banner__inner {
+      background: linear-gradient(135deg, #1a1030, #2d1b4e);
+      border-radius: 20px;
+      padding: 48px 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+      color: var(--white);
+    }
+    .custom-banner h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--violet-light), var(--sky-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .custom-banner p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .custom-banner__steps {
+      list-style: none;
+      margin: 16px 0 24px;
+    }
+    .custom-banner__steps li {
+      padding: 6px 0 6px 28px;
+      position: relative;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+    }
+    .custom-banner__steps li::before {
+      content: attr(data-n);
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--violet);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 7px;
+    }
+    .custom-banner__cta {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--violet);
+      color: var(--white);
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .custom-banner__cta:hover {
+      background: var(--violet-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(155,142,196,0.4);
+    }
+    .custom-banner__img {
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Hidden items */
+    .product.hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .custom-banner__inner {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+    }
+    @media (max-width: 480px) {
+      .shop-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">LILIAN VILLARET</a>
+      <nav class="header__nav" id="nav">
+        <a href="/#about" class="header__link">Обо мне</a>
+        <a href="/#gallery" class="header__link">Галерея</a>
+        <a href="/shop.html" class="header__link">Магазин</a>
+        <a href="/masterclass.html" class="header__link">Мастер-класс</a>
+        <a href="/#contacts" class="header__link">Контакты</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="shop-hero">
+    <h1>Магазин</h1>
+    <p>Интерьерные картины и кастомная одежда. Готовые работы и на заказ.</p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Все</button>
+    <button class="filter-btn" data-filter="painting">Картины</button>
+    <button class="filter-btn" data-filter="custom">Кастомные вещи</button>
+    <button class="filter-btn" data-filter="stock">В наличии</button>
+    <button class="filter-btn" data-filter="order">Под заказ</button>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="shop-grid" id="shopGrid">
+
+    <!-- КАРТИНЫ В НАЛИЧИИ -->
+    <div class="product" data-type="painting" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-014.jpg" alt="Абстракция — фиолет и бирюза" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Картина · Абстракция</p>
+        <h3 class="product__title">Фиолетовая вселенная</h3>
+        <p class="product__desc">Диптих, флюид-арт. Фиолет, бирюза, глубокий синий. Холст.</p>
+        <div class="product__footer">
+          <span class="product__price">6 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-type="painting" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-000.jpg" alt="Абстракция — розовый взрыв" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Картина · Абстракция</p>
+        <h3 class="product__title">Цветение</h3>
+        <p class="product__desc">Флюид-арт. Розовый, фиолетовый, голубой. Холст, акрил.</p>
+        <div class="product__footer">
+          <span class="product__price">4 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-type="painting" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-010.jpg" alt="Абстракция — огненная" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Картина · Абстракция</p>
+        <h3 class="product__title">Внутренний огонь</h3>
+        <p class="product__desc">Флюид-арт. Оранжевый, бордовый, фиолетовый. Холст.</p>
+        <div class="product__footer">
+          <span class="product__price">4 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-type="painting" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-008.jpg" alt="Абстракция — розовая нежность" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Картина · Абстракция</p>
+        <h3 class="product__title">Нежность</h3>
+        <p class="product__desc">Флюид-арт. Розовый, мятный, лавандовый. Холст.</p>
+        <div class="product__footer">
+          <span class="product__price">3 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-type="painting" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-009.jpg" alt="Абстракция — пастель" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Картина · Абстракция</p>
+        <h3 class="product__title">Тёплый свет</h3>
+        <p class="product__desc">Флюид-арт. Персиковый, лавандовый, мятный. Холст.</p>
+        <div class="product__footer">
+          <span class="product__price">3 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАРТИНЫ ПОД ЗАКАЗ -->
+    <div class="product" data-type="painting" data-avail="order">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-021.jpg" alt="Картина под заказ" class="product__img">
+        <span class="product__badge badge--order">Под заказ</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Картина · Под заказ</p>
+        <h3 class="product__title">Картина в ваших цветах</h3>
+        <p class="product__desc">Создам абстрактную картину под ваш интерьер. Размер, палитра, настроение — индивидуально.</p>
+        <div class="product__footer">
+          <span class="product__price"><small>от</small> 3 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-order">Заказать</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАСТОМНЫЕ ВЕЩИ В НАЛИЧИИ -->
+    <div class="product" data-type="custom" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/work-1.jpg" alt="Худи с космическим принтом" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Кастом · Худи</p>
+        <h3 class="product__title">Космическая худи</h3>
+        <p class="product__desc">Авторская роспись. Фиолетовый космос, белые брызги. Единственный экземпляр.</p>
+        <div class="product__footer">
+          <span class="product__price">4 500 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-type="custom" data-avail="stock">
+      <div class="product__img-wrap">
+        <img src="/images/work-2.jpg" alt="Футболка тай-дай" class="product__img">
+        <span class="product__badge badge--stock">В наличии</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Кастом · Футболка</p>
+        <h3 class="product__title">Энергия тай-дай</h3>
+        <p class="product__desc">Авторская футболка в технике тай-дай. Яркая, живая, единственная.</p>
+        <div class="product__footer">
+          <span class="product__price">3 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-stock">Купить</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАСТОМНЫЕ ВЕЩИ ПОД ЗАКАЗ -->
+    <div class="product" data-type="custom" data-avail="order">
+      <div class="product__img-wrap">
+        <img src="/images/mk/img-001.jpg" alt="Рубашка тай-дай под заказ" class="product__img">
+        <span class="product__badge badge--order">Под заказ</span>
+      </div>
+      <div class="product__body">
+        <p class="product__cat">Кастом · Под заказ</p>
+        <h3 class="product__title">Вещь с вашей энергией</h3>
+        <p class="product__desc">Аутентичная вещь, которая отражает ваш характер, суперсилы и миссию. Ваш месседж миру на ткани.</p>
+        <div class="product__footer">
+          <span class="product__price"><small>от</small> 3 000 &#8381;</span>
+          <a href="https://t.me/polly_makk" target="_blank" class="product__btn btn-order">Заказать</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CUSTOM ORDER BANNER -->
+  <div class="custom-banner">
+    <div class="custom-banner__inner">
+      <div>
+        <h2>Создам вещь,<br>которая говорит за вас</h2>
+        <p>Каждая вещь — портрет вашей внутренней силы. Я понимаю ваш характер, суперсилы, миссию, ауру — и перевожу это в визуальный язык.</p>
+        <ol class="custom-banner__steps">
+          <li data-n="1">Узнаю вас: кто вы, что движет, куда идёте</li>
+          <li data-n="2">Понимаю ключевые черты и энергетику</li>
+          <li data-n="3">Перевожу в палитру, стиль и композицию</li>
+          <li data-n="4">Создаю вашу вещь вручную</li>
+        </ol>
+        <a href="https://t.me/polly_makk" target="_blank" class="custom-banner__cta">Обсудить заказ в Telegram</a>
+      </div>
+      <img src="/images/mk/img-004.jpg" alt="Процесс создания" class="custom-banner__img">
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">&copy; 2026 Lilian Villaret</span>
+      <span class="footer__made">Санкт-Петербург</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Shop filters
+    const filters = document.querySelectorAll('.filter-btn');
+    const products = document.querySelectorAll('.product');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+
+        products.forEach(p => {
+          if (f === 'all') {
+            p.classList.remove('hidden');
+          } else if (f === 'stock' || f === 'order') {
+            p.classList.toggle('hidden', p.dataset.avail !== f);
+          } else {
+            p.classList.toggle('hidden', p.dataset.type !== f);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

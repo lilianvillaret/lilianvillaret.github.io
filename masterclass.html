@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мастер-класс по флюид-арту — Полина Маккурина</title>
+  <meta name="description" content="Мастер-класс по флюид-арту в Санкт-Петербурге. Терапия искусством: чувствуй, создавай и ощути счастье.">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sky: #a8d4e6;
+      --sky-light: #d4eef8;
+      --green: #8fbfa0;
+      --green-light: #d0e8d7;
+      --violet: #9b8ec4;
+      --violet-light: #d5cfea;
+      --violet-deep: #7b6bab;
+      --pink: #e8a0bf;
+      --bg: #f4f8fa;
+      --dark: #1e2a33;
+      --grey: #5a6b73;
+      --white: #fff;
+      --radius: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; border-radius: var(--radius); }
+
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide__inner {
+      max-width: 960px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==================== SLIDE 1: HERO ==================== */
+    .s1 {
+      background: url('/images/mk/img-000.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+    }
+    .s1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 10, 40, 0.65);
+    }
+    .s1__tag {
+      display: inline-block;
+      padding: 8px 24px;
+      border: 1px solid rgba(155,142,196,0.4);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--violet-light);
+      margin-bottom: 24px;
+    }
+    .s1__title {
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--violet-light), var(--sky-light), var(--green-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .s1__sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+    }
+
+    /* ==================== SLIDE 2: ABOUT ==================== */
+    .s2 { background: var(--white); }
+    .s2__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .s2__photos img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    }
+    .s2__name {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .s2 .subtitle {
+      color: var(--violet);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+    .s2__facts {
+      list-style: none;
+    }
+    .s2__facts li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      color: var(--grey);
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .s2__facts li:last-child { border: none; }
+    .s2__facts li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 15px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--violet), var(--sky));
+    }
+    .s2__note {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--grey);
+      font-style: italic;
+    }
+
+    /* ==================== SLIDE 3: QUOTE ==================== */
+    .s3 {
+      background: linear-gradient(135deg, var(--violet-light) 0%, var(--sky-light) 100%);
+    }
+    .s3__grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .s3__quote {
+      position: relative;
+      padding: 32px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+    .s3__quote::before {
+      content: '\201C';
+      position: absolute;
+      top: 8px; left: 16px;
+      font-size: 4.5rem;
+      color: var(--violet);
+      opacity: 0.2;
+      line-height: 1;
+    }
+    .s3__quote p {
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.8;
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .s3__quote strong { color: var(--violet-deep); }
+    .s3__caption {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: var(--grey);
+      text-align: center;
+    }
+    .s3__img {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ==================== SLIDE 4: WHAT IS ==================== */
+    .s4 { background: var(--white); }
+    .s4__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .s4 h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 20px;
+    }
+    .s4__text {
+      font-size: 1.05rem;
+      color: var(--grey);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .s4__video {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: var(--violet);
+      color: var(--white);
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .s4__video:hover {
+      background: var(--violet-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(155,142,196,0.3);
+    }
+    .s4__video svg { width: 18px; height: 18px; }
+    .s4__img { box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+
+    /* ==================== SLIDE 5: FOR WHOM ==================== */
+    .s5 { background: var(--bg); }
+    .s5__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .s5__card {
+      padding: 32px;
+      border-radius: var(--radius);
+    }
+    .s5__card--who { background: linear-gradient(135deg, var(--violet-light), rgba(213,207,234,0.3)); }
+    .s5__card--what { background: linear-gradient(135deg, var(--sky-light), rgba(212,238,248,0.3)); }
+    .s5__card h3 { font-size: 1.15rem; margin-bottom: 16px; }
+    .s5__card ul { list-style: none; }
+    .s5__card li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      color: var(--grey);
+      font-size: 0.93rem;
+    }
+    .s5__card--who li::before { content: '~'; position: absolute; left: 4px; color: var(--violet); font-weight: 700; }
+    .s5__card--what li::before { content: '\2713'; position: absolute; left: 4px; color: var(--green); font-weight: 700; }
+    .s5__result {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--green-light), var(--sky-light));
+      border-radius: var(--radius);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+    .s5__result strong { color: var(--violet-deep); }
+    .s5__photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .s5__photos img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .s5__photos figcaption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--grey);
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+    .s5__photos figcaption strong {
+      display: block;
+      color: var(--dark);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    /* ==================== SLIDE 6: FORMATS ==================== */
+    .s6 { background: var(--white); }
+    .s6 h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 36px;
+    }
+    .s6__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .s6__card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.3s;
+      background: var(--bg);
+    }
+    .s6__card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+    .s6__card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .s6__card-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .s6__card-body h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .s6__card-body p { font-size: 0.85rem; color: var(--grey); }
+
+    /* ==================== SLIDE 7: NO EXPERIENCE + INTERIOR ==================== */
+    .s7 { background: linear-gradient(135deg, #1a1030, #2d1b4e); color: var(--white); }
+    .s7::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(143,191,160,0.12), transparent 70%);
+      top: -150px; left: -150px;
+    }
+    .s7 h2 {
+      text-align: center;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--green-light), var(--sky-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .s7__points {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+    .s7__points p {
+      padding: 8px 0;
+      color: rgba(255,255,255,0.75);
+      font-size: 1.02rem;
+    }
+    .s7__highlight {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto 36px;
+      padding: 18px 32px;
+      background: rgba(155,142,196,0.15);
+      border: 1px solid rgba(155,142,196,0.3);
+      border-radius: 12px;
+      text-align: center;
+      font-style: italic;
+      color: var(--violet-light);
+      font-size: 1.05rem;
+    }
+    .s7__subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .s7__examples {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .s7__examples img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      border-radius: var(--radius);
+    }
+    .s7__interiors {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .s7__interiors img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    /* ==================== SLIDE 8: WORKS + PRICES ==================== */
+    .s8 { background: var(--white); }
+    .s8__grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .s8__img { box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .s8__prices {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .s8__prices h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .s8__price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+      font-size: 1rem;
+    }
+    .s8__price-row:last-of-type { border: none; }
+    .s8__price-row span:last-child {
+      font-weight: 700;
+      color: var(--violet-deep);
+    }
+    .s8__discount {
+      margin-top: 20px;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--violet-light), var(--sky-light));
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .s8__note {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: var(--grey);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ==================== SLIDE 9: REVIEWS ==================== */
+    .s9 { background: var(--bg); }
+    .s9 h2 {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 36px;
+    }
+    .s9__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .s9__grid img {
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      border-radius: 12px;
+    }
+    .s9__grid .tall { grid-row: span 2; }
+    .s9__grid .tall img { height: 100%; object-fit: cover; }
+
+    /* ==================== SLIDE 10: CLOSING ==================== */
+    .s10 {
+      background: linear-gradient(135deg, var(--violet-light) 0%, var(--sky-light) 50%, var(--green-light) 100%);
+    }
+    .s10__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .s10__quote p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      font-style: italic;
+    }
+    .s10__quote p:last-child {
+      font-weight: 700;
+      color: var(--violet-deep);
+      margin-top: 12px;
+    }
+    .s10__img { box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+
+    /* ==================== SLIDE 11: CONTACTS ==================== */
+    .s11 { background: var(--white); text-align: center; }
+    .s11__photo {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .s11 h2 { font-size: 1.4rem; margin-bottom: 4px; }
+    .s11 .subtitle {
+      color: var(--violet);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .s11__phone {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--violet-deep);
+      margin-bottom: 24px;
+    }
+    .s11__links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .s11__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--bg);
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .s11__link:hover {
+      background: var(--violet-light);
+      transform: translateY(-2px);
+    }
+    .s11__link svg { width: 18px; height: 18px; }
+    .s11__back a {
+      color: var(--grey);
+      font-size: 0.85rem;
+      border-bottom: 1px dashed var(--grey);
+    }
+    .s11__back a:hover { color: var(--violet); border-color: var(--violet); }
+
+    /* ==================== NAV DOTS ==================== */
+    .nav-dots {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .nav-dots__dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.15);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 0;
+    }
+    .nav-dots__dot.active {
+      background: var(--violet);
+      transform: scale(1.4);
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==================== MOBILE ==================== */
+    @media (max-width: 768px) {
+      .slide { padding: 48px 16px; min-height: auto; }
+      .s2__grid, .s3__grid, .s4__grid, .s5__top, .s8__grid, .s10__grid { grid-template-columns: 1fr; }
+      .s5__photos, .s7__examples, .s7__interiors { grid-template-columns: 1fr 1fr; }
+      .s9__grid { grid-template-columns: 1fr; }
+      .s9__grid .tall { grid-row: span 1; }
+      .nav-dots { display: none; }
+      .s2__photos img:first-child { aspect-ratio: 3/4; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- SLIDE 1: HERO — титул + главная картина флюид-арт -->
+<section class="slide s1" id="s-1">
+  <div class="slide__inner fade-up">
+    <p class="s1__tag">Мастер-класс</p>
+    <h1 class="s1__title">Мастер-класс<br>по флюид-арту</h1>
+    <p class="s1__sub">Терапия искусством: чувствуй,<br>создавай и ощути счастье</p>
+  </div>
+</section>
+
+<!-- SLIDE 2: ВЕДУЩАЯ МК — фото + факты -->
+<section class="slide s2" id="s-2">
+  <div class="slide__inner fade-up">
+    <div class="s2__grid">
+      <div class="s2__photos">
+        <img src="/images/mk/img-001.jpg" alt="Авторская рубашка тай-дай" class="s2__photo-main">
+      </div>
+      <div>
+        <h2 class="s2__name">Полина Маккурина</h2>
+        <p class="subtitle">Ведущая МК</p>
+        <ul class="s2__facts">
+          <li>Художник-абстракционист с 3-летним опытом</li>
+          <li>Мастер по флюид-арту и кастомизации</li>
+          <li>Работы украшают салоны красоты и кофейни Санкт-Петербурга</li>
+          <li>Автор выставки «Исцеление радостью» — про возможность поставить на паузу тяжёлые диагнозы с помощью состояния потока в творчестве</li>
+        </ul>
+        <p class="s2__note">Рубашка — авторская работа в технике тай-дай</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: ЦИТАТА + процесс -->
+<section class="slide s3" id="s-3">
+  <div class="slide__inner fade-up">
+    <div class="s3__grid">
+      <div class="s3__quote">
+        <p>В искусство меня привела жизнь в постоянной боли. Благодаря арт-терапии я поставила в ремиссию рассеянный склероз.</p>
+        <br>
+        <p>Поэтому я точно знаю — процесс флюид-арта <strong>магическим образом влияет на состояние</strong> не только в моменте, но и на то, как вы будете ощущать себя в дальнейшем.</p>
+      </div>
+      <div>
+        <img src="/images/mk/img-003.jpg" alt="Процесс создания флюид-арт" class="s3__img">
+        <p class="s3__caption">Подготовка к выставке, картина — одна из серии</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: ЧТО ТАКОЕ ФЛЮИД-АРТ -->
+<section class="slide s4" id="s-4">
+  <div class="slide__inner fade-up">
+    <div class="s4__grid">
+      <div>
+        <h2>Что такое флюид-арт?</h2>
+        <p class="s4__text">Флюид-арт — это завораживающий процесс свободного течения цвета. Здесь нет правил, рамок и необходимости «уметь рисовать». Есть только движение, ощущение и удовольствие от процесса.</p>
+        <a href="https://disk.yandex.ru/d/i3QpsXCDjy0Q4A" target="_blank" class="s4__video">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Посмотреть процесс создания картин
+        </a>
+      </div>
+      <img src="/images/mk/img-004.jpg" alt="Флюид-арт процесс" class="s4__img">
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: ДЛЯ КОГО + ЧТО ЖДЁТ + фото участников -->
+<section class="slide s5" id="s-5">
+  <div class="slide__inner fade-up">
+    <div class="s5__top">
+      <div class="s5__card s5__card--who">
+        <h3>Для кого подойдёт</h3>
+        <ul>
+          <li>Для тех, кто хочет новых эмоций</li>
+          <li>Для тех, кто давно хотел попробовать творчество</li>
+          <li>Для тех, кто ищет антистресс и перезагрузку</li>
+          <li>Для тех, кто хочет создать что-то уникальное своими руками</li>
+        </ul>
+      </div>
+      <div class="s5__card s5__card--what">
+        <h3>Что вас ждёт</h3>
+        <ul>
+          <li>Времяпровождение в приятной атмосфере</li>
+          <li>Расслабление и удовольствие от процесса</li>
+          <li>Незабываемые эмоции и новый творческий опыт</li>
+          <li>Эстетическое удовольствие</li>
+          <li>Поддержка и сопровождение на каждом этапе</li>
+        </ul>
+      </div>
+    </div>
+    <div class="s5__result">
+      И результат — <strong>своя авторская абстрактная картина</strong>, которая будет заряжать вас положительной энергией дома или на работе
+    </div>
+    <div class="s5__photos">
+      <figure>
+        <img src="/images/mk/img-005.jpg" alt="Индивидуальный МК">
+        <figcaption><strong>Индивидуальный МК</strong><br>Персональное занятие в комфортной атмосфере. Полное внимание мастера и свобода самовыражения.</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/mk/img-006.jpg" alt="МК Девичник">
+        <figcaption><strong>Тематический МК — Девичник</strong><br>Творческий праздник для подруг. Яркие эмоции и совместное творчество.</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/mk/img-007.jpg" alt="МК Свидание">
+        <figcaption><strong>Тематический МК — Свидание</strong><br>Романтический арт-вечер для двоих. Создайте картины вместе.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: ОПЫТ НЕ ВАЖЕН + примеры картин + интерьеры -->
+<section class="slide s7" id="s-7">
+  <div class="slide__inner fade-up">
+    <h2>Опыт в рисовании не важен</h2>
+    <div class="s7__points">
+      <p>Флюид-арт доступен каждому.</p>
+      <p>В этом формате невозможно «сделать неправильно».</p>
+      <p>Каждая работа уникальна, как ваше состояние в моменте.</p>
+    </div>
+    <div class="s7__highlight">
+      Главное — не навык, а ощущение.<br>
+      Если вы будете кайфовать — получится красиво 100%
+    </div>
+    <p class="s7__subtitle">Примеры картин участников</p>
+    <div class="s7__examples">
+      <img src="/images/mk/img-008.jpg" alt="Картина участника — розовая абстракция">
+      <img src="/images/mk/img-009.jpg" alt="Картина участника — пастельная абстракция">
+      <img src="/images/mk/img-010.jpg" alt="Картина участника — оранжевая абстракция">
+    </div>
+    <p class="s7__subtitle" style="margin-top:32px">Картины как стильный акцент интерьера</p>
+    <div class="s7__interiors">
+      <img src="/images/mk/img-011.jpg" alt="Картина в гостиной">
+      <img src="/images/mk/img-012.jpg" alt="Картина в спальне">
+      <img src="/images/mk/img-013.jpg" alt="Картина в кабинете">
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: РАБОТЫ КРУПНО + ЦЕНЫ -->
+<section class="slide s8" id="s-8">
+  <div class="slide__inner fade-up">
+    <div class="s8__grid">
+      <img src="/images/mk/img-014.jpg" alt="Авторские работы флюид-арт" class="s8__img">
+      <div class="s8__prices">
+        <h3>Стоимость участия</h3>
+        <div class="s8__price-row"><span>20x20 см</span><span>3 000 &#8381;</span></div>
+        <div class="s8__price-row"><span>30x30, 30x40 см</span><span>4 000 &#8381;</span></div>
+        <div class="s8__price-row"><span>40x50, 50x50 см</span><span>6 000 &#8381;</span></div>
+        <div class="s8__price-row"><span>60x80 см</span><span>9 000 &#8381;</span></div>
+        <div class="s8__discount">Компаниям от 3 человек — скидка 20%</div>
+        <p class="s8__note">*Стоимость за 1 участника. Палитра, техники, холст — всё подбирается индивидуально</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: ОТЗЫВЫ -->
+<section class="slide s9" id="s-9">
+  <div class="slide__inner fade-up">
+    <h2>Отзывы</h2>
+    <div class="s9__grid">
+      <div>
+        <img src="/images/mk/img-016.jpg" alt="Отзыв">
+      </div>
+      <div class="tall">
+        <img src="/images/mk/img-017.jpg" alt="Отзыв с котиком">
+      </div>
+      <div>
+        <img src="/images/mk/img-018.jpg" alt="Отзыв">
+      </div>
+      <div>
+        <img src="/images/mk/img-020.jpg" alt="Отзыв">
+      </div>
+      <div class="tall">
+        <img src="/images/mk/img-019.jpg" alt="Обсуждение картин">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 10: ФИНАЛЬНАЯ ЦИТАТА + процесс -->
+<section class="slide s10" id="s-10">
+  <div class="slide__inner fade-up">
+    <div class="s10__grid">
+      <div class="s10__quote">
+        <p>Иногда нужно просто позволить себе процесс.<br>
+        Без ожиданий. Без оценки. Без рамок.</p>
+        <p>Только цвет, движение и состояние.</p>
+      </div>
+      <img src="/images/mk/img-021.jpg" alt="Процесс флюид-арта" class="s10__img">
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 11: КОНТАКТЫ -->
+<section class="slide s11" id="s-11">
+  <div class="slide__inner fade-up">
+    <img src="/images/mk/img-022.jpg" alt="Полина Маккурина" class="s11__photo">
+    <h2>Контакты</h2>
+    <p class="subtitle">Ведущая МК — Полина Маккурина</p>
+    <p class="s11__phone">+7 (900) 500-80-13</p>
+    <div class="s11__links">
+      <a href="https://t.me/polly_makk" target="_blank" class="s11__link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        TG и VK: @polly_makk
+      </a>
+      <a href="https://t.me/art_LiVi" target="_blank" class="s11__link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Блог художника: @art_LiVi
+      </a>
+    </div>
+    <div class="s11__back">
+      <a href="/">&#8592; Вернуться на главную</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsBox = document.getElementById('navDots');
+  slides.forEach((s, i) => {
+    const d = document.createElement('button');
+    d.className = 'nav-dots__dot';
+    d.addEventListener('click', () => s.scrollIntoView({ behavior: 'smooth' }));
+    dotsBox.appendChild(d);
+  });
+  const dots = dotsBox.querySelectorAll('.nav-dots__dot');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = [...slides].indexOf(e.target);
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        e.target.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+      }
+    });
+  }, { threshold: 0.3 });
+  slides.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
