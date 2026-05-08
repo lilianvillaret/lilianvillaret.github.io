@@ -9,7 +9,7 @@
   <meta property="og:description" content="L'amour. L'art. La joie. Океан. Пламя. Гром. Вселенная.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/fonts/google-fonts.css">
-  <link rel="stylesheet" href="/css/style.css?v=3">
+  <link rel="stylesheet" href="/css/style.css?v=5">
 </head>
 <body>
 
@@ -26,20 +26,20 @@
   <button class="nav__burger" id="burger" aria-label="Меню"><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — правка 1: фото слева, текст справа -->
 <section class="hero">
   <div class="hero__bg"></div>
   <div class="hero__grain"></div>
   <div class="hero__content hero__content--split">
+    <div class="hero__photo">
+      <img src="/images/artist-hero.jpg" alt="Lilian Villaret">
+    </div>
     <div class="hero__left">
       <p class="hero__kicker">— contemporary artist —</p>
       <h1 class="hero__name">Lilian<br><em>Villaret</em></h1>
       <p class="hero__elements">océan · foudre · flamme · cosmos</p>
       <p class="hero__slogan">L'amour. L'art. La joie.</p>
       <div class="hero__scroll">↓ scroll</div>
-    </div>
-    <div class="hero__photo">
-      <img src="/images/artist-hero.jpg" alt="Lilian Villaret">
     </div>
   </div>
 </section>
@@ -65,11 +65,13 @@
   </div>
 
   <div class="series">
+    <!-- 01 BLUE HEART — правка 2: добавлено новое фото -->
     <article class="series__item">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
           <div class="carousel__slide" style="background-image:url('/images/mk/img-014.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/mk/img-000.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/blueheart-add.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
         <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
@@ -83,6 +85,7 @@
       </div>
     </article>
 
+    <!-- 02 DREAM ARCHIVE -->
     <article class="series__item series__item--reverse">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
@@ -101,9 +104,12 @@
       </div>
     </article>
 
+    <!-- 03 SILENT SCREAM — правка 5: новые фото + строки из песни -->
     <article class="series__item">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
+          <div class="carousel__slide" style="background-image:url('/images/silentscream-01.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/silentscream-02.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/mk/img-010.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/mk/img-003.jpg')"></div>
         </div>
@@ -114,15 +120,26 @@
       <div class="series__text">
         <p class="series__num">03</p>
         <h3 class="series__name">Silent Scream</h3>
-        <p class="series__quote">«Боль прожигающая, до крика. Но приходится молчать. И рисовать.»</p>
-        <p class="series__desc">Работы, созданные в моменты, когда нельзя произнести вслух. Абстракция как крик без звука. Публикуются без длинных подписей.</p>
+        <p class="series__quote">«Это мой крик. Который никто не услышит. Но каждый увидит.»</p>
+        <p class="series__desc">Работы, созданные в моменты, когда нельзя произнести вслух. Абстракция как крик без звука. Каждый мазок — слово, которое осталось внутри.</p>
       </div>
     </article>
 
+    <!-- 04 WEARABLE ART — правка 3: добавлены новые фото кастомизации -->
     <article class="series__item series__item--reverse">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
           <div class="carousel__slide" style="background-image:url('/images/wearable/01_purple_flame.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-01.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-02.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-03.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-04.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-05.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-06.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-07.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-08.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-09.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/custom-10.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/03_cosmos.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/04_foreigner.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/02_source.jpg')"></div>
@@ -142,10 +159,31 @@
         <p class="series__desc">Одежда как холст. Рубашки, худи, футболки — каждая вещь становится портретом внутренней силы того, кто её носит.</p>
       </div>
     </article>
+
+    <!-- 05 LIVING SPACE — правка 4: новый блок преображение пространства -->
+    <article class="series__item">
+      <div class="series__carousel" data-carousel>
+        <div class="carousel__track">
+          <div class="carousel__slide" style="background-image:url('/images/space-01.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/space-02.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/space-03.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/space-04.jpg')"></div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+        <div class="carousel__dots"></div>
+      </div>
+      <div class="series__text">
+        <p class="series__num">05</p>
+        <h3 class="series__name">Living Space</h3>
+        <p class="series__quote">«Пространство — это продолжение тебя. Когда стены молчат, они ждут, чтобы зазвучать.»</p>
+        <p class="series__desc">Преображение пространства через искусство. Картины, которые не просто висят — они меняют энергию комнаты. Каждый интерьер становится историей.</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- ART EVENINGS -->
+<!-- ART EVENINGS — правка 8: новые фото МК -->
 <section class="evenings" id="evenings">
   <div class="evenings__inner">
     <div class="section__head">
@@ -154,8 +192,19 @@
       <p class="section__sub">Маленькая группа. Три часа. Музыка, краски, атмосфера любви.<br>Не мастер-класс. Приключение со сценарием.</p>
     </div>
 
-    <div class="evenings__photo">
-      <img src="/images/mk/img-006.jpg" alt="Арт-вечер — групповой мастер-класс по флюид-арту">
+    <div class="series__carousel" data-carousel style="max-height:500px; border-radius:16px; margin-bottom:48px;">
+      <div class="carousel__track">
+        <div class="carousel__slide" style="background-image:url('/images/mk-new-01.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/mk-new-02.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/mk-new-03.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/mk-new-04.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/mk-new-05.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/mk-new-06.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/mk/img-006.jpg')"></div>
+      </div>
+      <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+      <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+      <div class="carousel__dots"></div>
     </div>
 
     <div class="formats">
@@ -184,6 +233,30 @@
   </div>
 </section>
 
+<!-- REVIEWS — правка 6: блок отзывов -->
+<section class="reviews" id="reviews">
+  <div class="reviews__inner">
+    <div class="section__head">
+      <p class="section__kicker">— reviews —</p>
+      <h2 class="section__title">Отзывы</h2>
+    </div>
+    <div class="series__carousel reviews__carousel" data-carousel>
+      <div class="carousel__track">
+        <div class="carousel__slide" style="background-image:url('/images/review-01.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+        <div class="carousel__slide" style="background-image:url('/images/review-02.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+        <div class="carousel__slide" style="background-image:url('/images/review-03.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+        <div class="carousel__slide" style="background-image:url('/images/review-04.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+        <div class="carousel__slide" style="background-image:url('/images/review-05.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+        <div class="carousel__slide" style="background-image:url('/images/review-06.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+        <div class="carousel__slide" style="background-image:url('/images/review-07.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+      </div>
+      <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+      <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+      <div class="carousel__dots"></div>
+    </div>
+  </div>
+</section>
+
 <!-- DREAM ARCHIVE TEASER -->
 <section class="dreams" id="dreams">
   <div class="dreams__inner">
@@ -200,11 +273,17 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT — правка 9: карусель с двумя фото -->
 <section class="about" id="about">
   <div class="about__inner">
-    <div class="about__image">
-      <img src="/images/about-new.jpg" alt="Lilian Villaret в мастерской">
+    <div class="series__carousel about__carousel" data-carousel>
+      <div class="carousel__track">
+        <div class="carousel__slide" style="background-image:url('/images/about-new.jpg')"></div>
+        <div class="carousel__slide" style="background-image:url('/images/about-carousel.jpg')"></div>
+      </div>
+      <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+      <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+      <div class="carousel__dots"></div>
     </div>
     <div class="about__text">
       <p class="section__kicker">— about —</p>
@@ -231,9 +310,12 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT — правка 7: добавлено фото -->
 <section class="contact" id="contact">
   <div class="contact__inner">
+    <div class="contact__photo">
+      <img src="/images/contact-photo.jpg" alt="Lilian Villaret">
+    </div>
     <p class="section__kicker">— contact —</p>
     <h2 class="contact__title">Если хочешь узнать больше —<br><em>напиши.</em></h2>
     <p class="contact__sub">Или просто смотри.</p>
@@ -259,6 +341,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=3"></script>
+<script src="/js/main.js?v=5"></script>
 </body>
 </html>
