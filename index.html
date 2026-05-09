@@ -9,7 +9,7 @@
   <meta property="og:description" content="L'amour. L'art. La joie. Океан. Пламя. Гром. Вселенная.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/fonts/google-fonts.css">
-  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/style.css?v=6">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
   <button class="nav__burger" id="burger" aria-label="Меню"><span></span><span></span></button>
 </nav>
 
-<!-- HERO — правка 1: фото слева, текст справа -->
+<!-- HERO — 1: убран cosmos -->
 <section class="hero">
   <div class="hero__bg"></div>
   <div class="hero__grain"></div>
@@ -37,7 +37,7 @@
     <div class="hero__left">
       <p class="hero__kicker">— contemporary artist —</p>
       <h1 class="hero__name">Lilian<br><em>Villaret</em></h1>
-      <p class="hero__elements">océan · foudre · flamme · cosmos</p>
+      <p class="hero__elements">océan · foudre · flamme</p>
       <p class="hero__slogan">L'amour. L'art. La joie.</p>
       <div class="hero__scroll">↓ scroll</div>
     </div>
@@ -65,12 +65,11 @@
   </div>
 
   <div class="series">
-    <!-- 01 BLUE HEART — правка 2: добавлено новое фото -->
+    <!-- 01 BLUE HEART — 2: убрано второе фото -->
     <article class="series__item">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
           <div class="carousel__slide" style="background-image:url('/images/mk/img-014.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/mk/img-000.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/blueheart-add.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
@@ -104,7 +103,7 @@
       </div>
     </article>
 
-    <!-- 03 SILENT SCREAM — правка 5: новые фото + строки из песни -->
+    <!-- 03 SILENT SCREAM — 3: прошлое описание + строка про гром -->
     <article class="series__item">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
@@ -120,32 +119,27 @@
       <div class="series__text">
         <p class="series__num">03</p>
         <h3 class="series__name">Silent Scream</h3>
-        <p class="series__quote">«Это мой крик. Который никто не услышит. Но каждый увидит.»</p>
-        <p class="series__desc">Работы, созданные в моменты, когда нельзя произнести вслух. Абстракция как крик без звука. Каждый мазок — слово, которое осталось внутри.</p>
+        <p class="series__quote">«Боль прожигающая, до крика. Но приходится молчать. И рисовать.»</p>
+        <p class="series__desc">Работы, созданные в моменты, когда нельзя произнести вслух. Абстракция как крик без звука. Публикуются без длинных подписей.</p>
+        <p class="series__quote" style="margin-top:16px; font-size:16px;">«Если бы крик мой был громом в небе, я бы разбудила спящих богов.»</p>
       </div>
     </article>
 
-    <!-- 04 WEARABLE ART — правка 3: добавлены новые фото кастомизации -->
-    <article class="series__item series__item--reverse">
-      <div class="series__carousel" data-carousel>
+    <!-- 04 WEARABLE ART — 4: убраны фото 3,4,6,8,12,17; шире формат -->
+    <article class="series__item series__item--reverse series__item--wide">
+      <div class="series__carousel series__carousel--wide" data-carousel>
         <div class="carousel__track">
           <div class="carousel__slide" style="background-image:url('/images/wearable/01_purple_flame.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/custom-01.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/custom-02.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/custom-03.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/custom-04.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/custom-05.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/custom-06.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/custom-07.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/custom-08.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/custom-09.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/custom-10.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/wearable/03_cosmos.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/04_foreigner.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/02_source.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/05_ocean.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/06_genius.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/wearable/07_parallel.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/wearable/08_twofaced.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
@@ -160,7 +154,7 @@
       </div>
     </article>
 
-    <!-- 05 LIVING SPACE — правка 4: новый блок преображение пространства -->
+    <!-- 05 LIVING SPACE -->
     <article class="series__item">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
@@ -183,57 +177,66 @@
   </div>
 </section>
 
-<!-- ART EVENINGS — правка 8: новые фото МК -->
+<!-- ART EVENINGS — 5: три формата с отдельными фото + кнопками. 6: старые форматы убраны -->
 <section class="evenings" id="evenings">
   <div class="evenings__inner">
     <div class="section__head">
       <p class="section__kicker">— art evenings —</p>
-      <h2 class="section__title">Вечера</h2>
-      <p class="section__sub">Маленькая группа. Три часа. Музыка, краски, атмосфера любви.<br>Не мастер-класс. Приключение со сценарием.</p>
-    </div>
-
-    <div class="series__carousel" data-carousel style="max-height:500px; border-radius:16px; margin-bottom:48px;">
-      <div class="carousel__track">
-        <div class="carousel__slide" style="background-image:url('/images/mk-new-01.jpg')"></div>
-        <div class="carousel__slide" style="background-image:url('/images/mk-new-02.jpg')"></div>
-        <div class="carousel__slide" style="background-image:url('/images/mk-new-03.jpg')"></div>
-        <div class="carousel__slide" style="background-image:url('/images/mk-new-04.jpg')"></div>
-        <div class="carousel__slide" style="background-image:url('/images/mk-new-05.jpg')"></div>
-        <div class="carousel__slide" style="background-image:url('/images/mk-new-06.jpg')"></div>
-        <div class="carousel__slide" style="background-image:url('/images/mk/img-006.jpg')"></div>
-      </div>
-      <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
-      <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
-      <div class="carousel__dots"></div>
+      <h2 class="section__title">Мастер-классы</h2>
+      <p class="section__sub">Искусство как переживание. Не урок — приключение со сценарием.</p>
     </div>
 
     <div class="formats">
+      <!-- Формат 1: Индивидуальный МК по флюид-арту -->
       <article class="format">
-        <p class="format__price">5 000 ₽ <span>/ чел</span></p>
-        <h3 class="format__name">Живое Приключение</h3>
-        <p class="format__desc">6–10 участниц · 3 часа · музыка, дыхание, краски<br>Уходишь с личной картиной и обновлённым состоянием. Профессиональные фото.</p>
+        <div class="format__photos series__carousel" data-carousel>
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-06.jpg')"></div>
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-04.jpg')"></div>
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-05.jpg')"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+          <div class="carousel__dots"></div>
+        </div>
+        <h3 class="format__name">Индивидуальный МК по флюид-арту</h3>
+        <p class="format__desc">В атмосфере под состояние, которое мы будем создавать вместе. Ты уходишь с картиной-порталом — окном в своё внутреннее пространство.</p>
+        <p class="format__price">6 000 ₽ <span>/ 3 часа</span></p>
+        <a href="#contact" class="btn">Записаться</a>
       </article>
 
+      <!-- Формат 2: МК по кастомизации -->
       <article class="format">
-        <p class="format__price">от 50 000 ₽</p>
-        <h3 class="format__name">Частный Вечер</h3>
-        <p class="format__desc">Закрытая группа до 12 человек · индивидуальная тема<br>День рождения, девичник, корпоратив. Праздник, который запомнится.</p>
+        <div class="format__photos series__carousel" data-carousel>
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-01.jpg')"></div>
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-02.jpg')"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+          <div class="carousel__dots"></div>
+        </div>
+        <h3 class="format__name">МК по кастомизации</h3>
+        <p class="format__desc">Создай вещь-артефакт своей силы личности. Рубашка, худи или футболка — станет продолжением тебя.</p>
+        <p class="format__price">4 000 ₽ <span>/ 3 часа</span></p>
+        <a href="#contact" class="btn">Записаться</a>
       </article>
 
+      <!-- Формат 3: Групповой МК -->
       <article class="format">
-        <p class="format__price">от 25 000 ₽</p>
-        <h3 class="format__name">Коллаборация</h3>
-        <p class="format__desc">С кафе, студиями, брендами<br>Ваш продукт — часть творческого опыта гостей. Не реклама — переживание.</p>
+        <div class="format__photos">
+          <img src="/images/mk/img-006.jpg" alt="Групповой мастер-класс" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+        </div>
+        <h3 class="format__name">Групповой МК</h3>
+        <p class="format__desc">Маленькая группа до 6 человек. Музыка, краски, атмосфера. Каждый уходит с личной картиной и обновлённым состоянием.</p>
+        <p class="format__price">2 000 ₽ <span>/ чел · группа до 6</span></p>
+        <a href="#contact" class="btn">Записаться</a>
       </article>
-    </div>
-
-    <div class="evenings__cta">
-      <a href="#contact" class="btn">Записаться</a>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS — правка 6: блок отзывов -->
+<!-- REVIEWS -->
 <section class="reviews" id="reviews">
   <div class="reviews__inner">
     <div class="section__head">
@@ -273,7 +276,7 @@
   </div>
 </section>
 
-<!-- ABOUT — правка 9: карусель с двумя фото -->
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about__inner">
     <div class="series__carousel about__carousel" data-carousel>
@@ -310,26 +313,28 @@
   </div>
 </section>
 
-<!-- CONTACT — правка 7: добавлено фото -->
+<!-- CONTACT — 7: фото полным форматом слева -->
 <section class="contact" id="contact">
-  <div class="contact__inner">
-    <div class="contact__photo">
+  <div class="contact__inner contact__inner--split">
+    <div class="contact__photo contact__photo--full">
       <img src="/images/contact-photo.jpg" alt="Lilian Villaret">
     </div>
-    <p class="section__kicker">— contact —</p>
-    <h2 class="contact__title">Если хочешь узнать больше —<br><em>напиши.</em></h2>
-    <p class="contact__sub">Или просто смотри.</p>
+    <div class="contact__text">
+      <p class="section__kicker">— contact —</p>
+      <h2 class="contact__title">Если хочешь узнать больше —<br><em>напиши.</em></h2>
+      <p class="contact__sub">Или просто смотри.</p>
 
-    <div class="contact__links">
-      <a href="https://t.me/polly_makk" target="_blank" class="contact__link">Telegram</a>
-      <a href="https://t.me/art_LiVi" target="_blank" class="contact__link">Art Blog</a>
-      <a href="https://vk.ru/polly_makk" target="_blank" class="contact__link">VK</a>
-      <a href="https://pin.it/7qVr0eYWk" target="_blank" class="contact__link">Pinterest</a>
-      <a href="http://www.youtube.com/@Art_LiVi" target="_blank" class="contact__link">YouTube</a>
+      <div class="contact__links">
+        <a href="https://t.me/polly_makk" target="_blank" class="contact__link">Telegram</a>
+        <a href="https://t.me/art_LiVi" target="_blank" class="contact__link">Art Blog</a>
+        <a href="https://vk.ru/polly_makk" target="_blank" class="contact__link">VK</a>
+        <a href="https://pin.it/7qVr0eYWk" target="_blank" class="contact__link">Pinterest</a>
+        <a href="http://www.youtube.com/@Art_LiVi" target="_blank" class="contact__link">YouTube</a>
+      </div>
+
+      <p class="contact__phone">+7 (900) 500-80-13</p>
+      <p class="contact__city">Saint Petersburg · RU · EN · FR</p>
     </div>
-
-    <p class="contact__phone">+7 (900) 500-80-13</p>
-    <p class="contact__city">Saint Petersburg · RU · EN · FR</p>
   </div>
 </section>
 
@@ -341,6 +346,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=5"></script>
+<script src="/js/main.js?v=6"></script>
 </body>
 </html>
