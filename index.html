@@ -37,7 +37,6 @@
       <p class="hero__kicker">— contemporary artist —</p>
       <h1 class="hero__name">Lilian<br><em>Villaret</em></h1>
       <p class="hero__elements">océan · foudre · flamme</p>
-      <p class="hero__slogan">L'amour. L'art. La joie.</p>
       <div class="hero__scroll">↓ scroll</div>
     </div>
   </div>
@@ -64,39 +63,46 @@
   </div>
 
   <div class="series">
-    <!-- 01 SILENT SCREAM — 2: новое фото -->
+    <!-- 01 DREAM ARCHIVE — contain формат, без обрезки -->
     <article class="series__item">
-      <div class="series__image" style="background-image:url('/images/scream-new.jpg')"></div>
-      <div class="series__text">
-        <p class="series__num">01</p>
-        <h3 class="series__name">Silent Scream</h3>
-        <p class="series__quote">«Боль прожигающая, до крика. Но приходится молчать. И рисовать.»</p>
-        <p class="series__desc">Работы, созданные в моменты, когда нельзя произнести вслух. Абстракция как крик без звука. Публикуются без длинных подписей.</p>
-        <p class="series__quote" style="margin-top:16px; font-size:16px;">«Если бы крик мой был громом в небе, я бы разбудила спящих богов.»</p>
-      </div>
-    </article>
-
-    <!-- 02 BLUE HEART — 3: обрезанное фото, крупнее кулон -->
-    <article class="series__item series__item--reverse">
-      <div class="series__carousel" data-carousel>
+      <div class="series__carousel series__carousel--contain" data-carousel>
         <div class="carousel__track">
-          <div class="carousel__slide" style="background-image:url('/images/blueheart-crop.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/mk/img-014.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-01.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-02.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-03.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-04.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-05.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-06.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
         <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
         <div class="carousel__dots"></div>
       </div>
       <div class="series__text">
-        <p class="series__num">02</p>
-        <h3 class="series__name">Blue Heart</h3>
-        <p class="series__quote">«В январе я надела кулон с синим сердцем. Как ледяное, которое ничего не ощущает. Так я себя программировала.»</p>
-        <p class="series__desc">От ледяного к живому. Холодные тона, прорывающиеся теплом. Серия о том, как возвращаешься к себе после того, как решила больше не чувствовать.</p>
+        <p class="series__num">01</p>
+        <h3 class="series__name">Dream Archive</h3>
+        <p class="series__quote">«Занимаюсь осознанными снами. Записываю их в форме рассказов. Каждая работа — эхо конкретного сна.»</p>
+        <p class="series__desc">Визуализация личного архива снов. Магический реализм в тексте — абстракция на холсте. Dream-based abstraction.</p>
       </div>
     </article>
+  </div>
+</section>
 
-    <!-- 03 WEARABLE ART -->
-    <article class="series__item">
+<!-- ЗА ГРАНЬЮ СНА — стикер-заметка -->
+<section class="dreams dreams--compact" id="dreams">
+  <div class="dreams__sticker">
+    <p class="dreams__sticker-title">За гранью сна</p>
+    <p class="dreams__sticker-text">Мой личный архив снов, записанных в форме рассказов. Каждая картина — визуальное эхо конкретного сна.</p>
+    <p class="dreams__sticker-quote">«Форма без формы — это и есть определение абстракции.»</p>
+    <p class="dreams__sticker-soon">soon · coming</p>
+  </div>
+</section>
+
+<!-- Продолжение серий -->
+<section class="works">
+  <div class="series">
+    <!-- 02 WEARABLE ART — contain формат -->
+    <article class="series__item series__item--reverse">
       <div class="series__carousel series__carousel--contain" data-carousel>
         <div class="carousel__track">
           <div class="carousel__slide" style="background-image:url('/images/wear-01.jpg')"></div>
@@ -114,23 +120,39 @@
         <div class="carousel__dots"></div>
       </div>
       <div class="series__text">
-        <p class="series__num">03</p>
+        <p class="series__num">02</p>
         <h3 class="series__name">Wearable Art</h3>
         <p class="series__quote">«Три дня я смотрела в потолок. Потом начала кастомизировать вещи. Так родилась первая рубашка в тай-дай.»</p>
         <p class="series__desc">Одежда как холст. Рубашки, худи, футболки — каждая вещь становится портретом внутренней силы того, кто её носит.</p>
       </div>
     </article>
 
-    <!-- 04 DREAM ARCHIVE — 4: новые фото из папки -->
+    <!-- 03 SILENT SCREAM — 2 фото в карусели -->
+    <article class="series__item">
+      <div class="series__carousel" data-carousel>
+        <div class="carousel__track">
+          <div class="carousel__slide" style="background-image:url('/images/scream-new.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/scream-02.jpg')"></div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+        <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+        <div class="carousel__dots"></div>
+      </div>
+      <div class="series__text">
+        <p class="series__num">03</p>
+        <h3 class="series__name">Silent Scream</h3>
+        <p class="series__quote">«Боль прожигающая, до крика. Но приходится молчать. И рисовать.»</p>
+        <p class="series__desc">Работы, созданные в моменты, когда нельзя произнести вслух. Абстракция как крик без звука. Публикуются без длинных подписей.</p>
+        <p class="series__quote" style="margin-top:16px; font-size:16px;">«Если бы крик мой был громом в небе, я бы разбудила спящих богов.»</p>
+      </div>
+    </article>
+
+    <!-- 04 BLUE HEART — новое фото + кулон -->
     <article class="series__item series__item--reverse">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
-          <div class="carousel__slide" style="background-image:url('/images/dream-new-01.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-new-02.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-new-03.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-new-04.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-new-05.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-new-06.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/blueheart-crop.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/blueheart-new.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
         <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
@@ -138,21 +160,11 @@
       </div>
       <div class="series__text">
         <p class="series__num">04</p>
-        <h3 class="series__name">Dream Archive</h3>
-        <p class="series__quote">«Занимаюсь осознанными снами. Записываю их в форме рассказов. Каждая работа — эхо конкретного сна.»</p>
-        <p class="series__desc">Визуализация личного архива снов. Магический реализм в тексте — абстракция на холсте. Dream-based abstraction.</p>
+        <h3 class="series__name">Blue Heart</h3>
+        <p class="series__quote">«В январе я надела кулон с синим сердцем. Как ледяное, которое ничего не ощущает. Так я себя программировала.»</p>
+        <p class="series__desc">От ледяного к живому. Холодные тона, прорывающиеся теплом. Серия о том, как возвращаешься к себе после того, как решила больше не чувствовать.</p>
       </div>
     </article>
-  </div>
-</section>
-
-<!-- ЗА ГРАНЬЮ СНА — 5: компактный стикер -->
-<section class="dreams dreams--compact" id="dreams">
-  <div class="dreams__sticker">
-    <p class="dreams__sticker-title">За гранью сна</p>
-    <p class="dreams__sticker-text">Мой личный архив снов, записанных в форме рассказов. Каждая картина — визуальное эхо конкретного сна.</p>
-    <p class="dreams__sticker-quote">«Форма без формы — это и есть определение абстракции.»</p>
-    <p class="dreams__sticker-soon">soon · coming</p>
   </div>
 </section>
 
@@ -215,19 +227,19 @@
         <div class="shop__img" style="background-image:url('/images/space-01.jpg')"></div>
         <h4 class="shop__name">Внутренний огонь</h4>
         <p class="shop__desc">Энергия пламени в абстрактной форме. Для интерьера, который говорит о силе.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn btn--small">Узнать цену</a>
       </div>
       <div class="shop__item">
         <div class="shop__img" style="background-image:url('/images/space-02.jpg')"></div>
         <h4 class="shop__name">Многогранность бытия</h4>
         <p class="shop__desc">Слои смыслов, перетекающие друг в друга. Каждый раз видишь новое.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn btn--small">Узнать цену</a>
       </div>
       <div class="shop__item">
         <div class="shop__img" style="background-image:url('/images/space-03.jpg')"></div>
         <h4 class="shop__name">Пробуждение</h4>
         <p class="shop__desc">Свет прорывается сквозь слои. Картина для пространства, которое хочет ожить.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn btn--small">Узнать цену</a>
       </div>
     </div>
 
@@ -248,7 +260,7 @@
         </div>
         <h4 class="shop__name">Худи «Космос»</h4>
         <p class="shop__desc">Ручная роспись. Уникальный экземпляр.</p>
-        <a href="#contact" class="btn btn--small">Заказать</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn btn--small">Заказать</a>
       </div>
     </div>
   </div>
@@ -278,7 +290,7 @@
         <h3 class="format__name">Картина-портал</h3>
         <p class="format__desc">Индивидуальный мастер-класс по флюид-арту. Вместе создадим атмосферу под ваше состояние — музыка, свет, дыхание. Вы уходите с картиной-порталом: окном в своё внутреннее пространство, которое можно повесить на стену и возвращаться к нему.</p>
         <p class="format__price">6 000 ₽ <span>/ 3 часа</span></p>
-        <a href="#contact" class="btn">Записаться</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn">Записаться</a>
       </article>
 
       <article class="format">
@@ -294,7 +306,7 @@
         <h3 class="format__name">Вещь-артефакт силы</h3>
         <p class="format__desc">Вместе пройдём все этапы арт-терапии и создадим вещь — молчаливое высказывание о вашей личности. Напоминание о ценностях, амулет веры в себя и стильный акцент гардероба.</p>
         <p class="format__price">4 000 ₽ <span>/ 3 часа</span></p>
-        <a href="#contact" class="btn">Записаться</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn">Записаться</a>
       </article>
 
       <article class="format">
@@ -304,7 +316,7 @@
         <h3 class="format__name">Стань ближе</h3>
         <p class="format__desc">Вместе с любимым человеком или подругой создадите картину — отражение синергии ваших ярких энергий. Два ритма, одно полотно.</p>
         <p class="format__price">8 000 ₽ <span>/ 3 часа · для двоих</span></p>
-        <a href="#contact" class="btn">Записаться</a>
+        <a href="https://t.me/polly_makk" target="_blank" class="btn">Записаться</a>
       </article>
     </div>
   </div>
