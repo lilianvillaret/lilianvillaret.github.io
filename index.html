@@ -9,11 +9,10 @@
   <meta property="og:description" content="L'amour. L'art. La joie. Океан. Пламя. Гром.">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="/fonts/google-fonts.css">
-  <link rel="stylesheet" href="/css/style.css?v=7">
+  <link rel="stylesheet" href="/css/style.css?v=8">
 </head>
 <body>
 
-<!-- NAV — 8: добавлен магазин -->
 <nav class="nav">
   <a href="/" class="nav__logo">Lilian Villaret</a>
   <div class="nav__links" id="navLinks">
@@ -44,10 +43,10 @@
   </div>
 </section>
 
-<!-- MANIFESTO — 2: новый текст -->
+<!-- MANIFESTO — 1: текст меньше -->
 <section class="manifesto">
   <div class="manifesto__inner">
-    <p class="manifesto__text">
+    <p class="manifesto__text manifesto__text--small">
       Я не просто создаю красивые картины и вещи,<br>
       а перевожу то, что чувствую,<br>
       <em>в форму, которую можно увидеть.</em>
@@ -56,7 +55,7 @@
   </div>
 </section>
 
-<!-- WORKS / SERIES — 3: новый текст, 6: новый порядок блоков -->
+<!-- WORKS -->
 <section class="works" id="works">
   <div class="section__head">
     <p class="section__kicker">— works —</p>
@@ -65,19 +64,9 @@
   </div>
 
   <div class="series">
-    <!-- 01 SILENT SCREAM (было 03) -->
+    <!-- 01 SILENT SCREAM — 2: новое фото -->
     <article class="series__item">
-      <div class="series__carousel" data-carousel>
-        <div class="carousel__track">
-          <div class="carousel__slide" style="background-image:url('/images/silentscream-01.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/silentscream-02.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/mk/img-010.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/mk/img-003.jpg')"></div>
-        </div>
-        <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
-        <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
-        <div class="carousel__dots"></div>
-      </div>
+      <div class="series__image" style="background-image:url('/images/scream-new.jpg')"></div>
       <div class="series__text">
         <p class="series__num">01</p>
         <h3 class="series__name">Silent Scream</h3>
@@ -87,12 +76,12 @@
       </div>
     </article>
 
-    <!-- 02 BLUE HEART (было 01) -->
+    <!-- 02 BLUE HEART — 3: обрезанное фото, крупнее кулон -->
     <article class="series__item series__item--reverse">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
+          <div class="carousel__slide" style="background-image:url('/images/blueheart-crop.jpg')"></div>
           <div class="carousel__slide" style="background-image:url('/images/mk/img-014.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/blueheart-add.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
         <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
@@ -106,7 +95,7 @@
       </div>
     </article>
 
-    <!-- 03 WEARABLE ART (было 04) — 5: новая карусель, contain формат -->
+    <!-- 03 WEARABLE ART -->
     <article class="series__item">
       <div class="series__carousel series__carousel--contain" data-carousel>
         <div class="carousel__track">
@@ -132,15 +121,16 @@
       </div>
     </article>
 
-    <!-- 04 DREAM ARCHIVE — 4: новые фото -->
+    <!-- 04 DREAM ARCHIVE — 4: новые фото из папки -->
     <article class="series__item series__item--reverse">
       <div class="series__carousel" data-carousel>
         <div class="carousel__track">
-          <div class="carousel__slide" style="background-image:url('/images/dream-main.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-01.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-02.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-03.jpg')"></div>
-          <div class="carousel__slide" style="background-image:url('/images/dream-04.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-01.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-02.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-03.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-04.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-05.jpg')"></div>
+          <div class="carousel__slide" style="background-image:url('/images/dream-new-06.jpg')"></div>
         </div>
         <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
         <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
@@ -156,163 +146,17 @@
   </div>
 </section>
 
-<!-- DREAM ARCHIVE TEASER — после серий -->
-<section class="dreams" id="dreams">
-  <div class="dreams__inner">
-    <p class="section__kicker dreams__kicker">— dream archive —</p>
-    <h2 class="dreams__title"><em>За гранью сна</em></h2>
-    <p class="dreams__text">
-      Мой личный архив снов, записанных в форме рассказов.<br>
-      Каждая картина — визуальное эхо конкретного сна.
-    </p>
-    <p class="dreams__quote">
-      «Форма без формы — это и есть определение абстракции.»
-    </p>
-    <p class="dreams__soon">soon · coming</p>
+<!-- ЗА ГРАНЬЮ СНА — 5: компактный стикер -->
+<section class="dreams dreams--compact" id="dreams">
+  <div class="dreams__sticker">
+    <p class="dreams__sticker-title">За гранью сна</p>
+    <p class="dreams__sticker-text">Мой личный архив снов, записанных в форме рассказов. Каждая картина — визуальное эхо конкретного сна.</p>
+    <p class="dreams__sticker-quote">«Форма без формы — это и есть определение абстракции.»</p>
+    <p class="dreams__sticker-soon">soon · coming</p>
   </div>
 </section>
 
-<!-- SHOP — 1: магазин с категориями -->
-<section class="shop" id="shop">
-  <div class="shop__inner">
-    <div class="section__head">
-      <p class="section__kicker">— shop —</p>
-      <h2 class="section__title">Магазин</h2>
-    </div>
-
-    <!-- Категория 1: Интерьерные картины -->
-    <h3 class="shop__category">Интерьерные картины</h3>
-    <p class="shop__category-desc">Преображение пространства через искусство. Картины, которые не просто висят — они меняют энергию комнаты. Каждый интерьер становится историей.</p>
-    <div class="shop__grid">
-      <div class="shop__item">
-        <div class="shop__img" style="background-image:url('/images/space-01.jpg')"></div>
-        <h4 class="shop__name">Портал тишины</h4>
-        <p class="shop__desc">Абстрактная композиция, созданная в момент внутренней паузы. Тёплые тона перетекают в глубину.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
-      </div>
-      <div class="shop__item">
-        <div class="shop__img" style="background-image:url('/images/space-02.jpg')"></div>
-        <h4 class="shop__name">Пробуждение</h4>
-        <p class="shop__desc">Свет прорывается сквозь слои. Картина для пространства, которое хочет ожить.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
-      </div>
-      <div class="shop__item">
-        <div class="shop__img" style="background-image:url('/images/space-03.jpg')"></div>
-        <h4 class="shop__name">Внутренний огонь</h4>
-        <p class="shop__desc">Энергия пламени в абстрактной форме. Для интерьера, который говорит о силе.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
-      </div>
-      <div class="shop__item">
-        <div class="shop__img" style="background-image:url('/images/space-04.jpg')"></div>
-        <h4 class="shop__name">Глубина</h4>
-        <p class="shop__desc">Океанические оттенки, затягивающие вглубь. Картина-медитация для созерцания.</p>
-        <a href="#contact" class="btn btn--small">Узнать цену</a>
-      </div>
-    </div>
-
-    <!-- Категория 2: Кастомизированные вещи -->
-    <h3 class="shop__category">Кастомизированные вещи</h3>
-    <p class="shop__category-desc">Каждая вещь — портрет внутренней силы того, кто её носит. Ручная роспись, тай-дай, уникальный экземпляр.</p>
-    <div class="shop__grid">
-      <div class="shop__item shop__item--custom">
-        <div class="series__carousel" data-carousel style="aspect-ratio:9/16; border-radius:8px;">
-          <div class="carousel__track">
-            <div class="carousel__slide" style="background-image:url('/images/shop-custom-01.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
-            <div class="carousel__slide" style="background-image:url('/images/shop-custom-02.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
-            <div class="carousel__slide" style="background-image:url('/images/shop-custom-03.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
-          </div>
-          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
-          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
-          <div class="carousel__dots"></div>
-        </div>
-        <h4 class="shop__name">Вещь-артефакт</h4>
-        <p class="shop__desc">Кастомизированная вещь с ручной росписью. Молчаливое высказывание о вашей личности.</p>
-        <a href="#contact" class="btn btn--small">Заказать</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MASTERCLASS — 6: переименован из Art Evenings, 7: новые названия -->
-<section class="evenings" id="masterclass">
-  <div class="evenings__inner">
-    <div class="section__head">
-      <p class="section__kicker">— experience —</p>
-      <h2 class="section__title">Мастер-классы</h2>
-      <p class="section__sub">Искусство как переживание. Не урок — приключение со сценарием.</p>
-    </div>
-
-    <div class="formats">
-      <!-- Формат 1: Картина-портал -->
-      <article class="format">
-        <div class="format__photos series__carousel" data-carousel>
-          <div class="carousel__track">
-            <div class="carousel__slide" style="background-image:url('/images/mk-new-06.jpg')"></div>
-            <div class="carousel__slide" style="background-image:url('/images/mk-new-04.jpg')"></div>
-            <div class="carousel__slide" style="background-image:url('/images/mk-new-05.jpg')"></div>
-          </div>
-          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
-          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
-          <div class="carousel__dots"></div>
-        </div>
-        <h3 class="format__name">Картина-портал</h3>
-        <p class="format__desc">Индивидуальный мастер-класс по флюид-арту. Вместе создадим атмосферу под ваше состояние — музыка, свет, дыхание. Вы уходите с картиной-порталом: окном в своё внутреннее пространство, которое можно повесить на стену и возвращаться к нему.</p>
-        <p class="format__price">6 000 ₽ <span>/ 3 часа</span></p>
-        <a href="#contact" class="btn">Записаться</a>
-      </article>
-
-      <!-- Формат 2: Вещь-артефакт силы -->
-      <article class="format">
-        <div class="format__photos series__carousel" data-carousel>
-          <div class="carousel__track">
-            <div class="carousel__slide" style="background-image:url('/images/mk-new-01.jpg')"></div>
-            <div class="carousel__slide" style="background-image:url('/images/mk-new-02.jpg')"></div>
-          </div>
-          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
-          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
-          <div class="carousel__dots"></div>
-        </div>
-        <h3 class="format__name">Вещь-артефакт силы</h3>
-        <p class="format__desc">Вместе пройдём все этапы арт-терапии и создадим вещь — молчаливое высказывание о вашей личности. Напоминание о ценностях, амулет веры в себя и стильный акцент гардероба.</p>
-        <p class="format__price">4 000 ₽ <span>/ 3 часа</span></p>
-        <a href="#contact" class="btn">Записаться</a>
-      </article>
-
-      <!-- Формат 3: Стань ближе -->
-      <article class="format">
-        <div class="format__photos">
-          <img src="/images/mk-together.jpg" alt="Мастер-класс для двоих" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
-        </div>
-        <h3 class="format__name">Стань ближе</h3>
-        <p class="format__desc">Вместе с любимым человеком или подругой создадите картину — отражение синергии ваших ярких энергий. Два ритма, одно полотно.</p>
-        <p class="format__price">8 000 ₽ <span>/ 3 часа · для двоих</span></p>
-        <a href="#contact" class="btn">Записаться</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS — 9: сетка с плавным появлением -->
-<section class="reviews" id="reviews">
-  <div class="reviews__inner">
-    <div class="section__head">
-      <p class="section__kicker">— reviews —</p>
-      <h2 class="section__title">Отзывы</h2>
-    </div>
-    <div class="reviews__grid">
-      <div class="review__item review__item--priority"><img src="/images/rev-01.jpg" alt="Отзыв"></div>
-      <div class="review__item review__item--priority"><img src="/images/rev-02.jpg" alt="Отзыв"></div>
-      <div class="review__item review__item--priority"><img src="/images/rev-03.jpg" alt="Отзыв"></div>
-      <div class="review__item"><img src="/images/rev-04.jpg" alt="Отзыв"></div>
-      <div class="review__item"><img src="/images/rev-05.jpg" alt="Отзыв"></div>
-      <div class="review__item"><img src="/images/rev-06.jpg" alt="Отзыв"></div>
-      <div class="review__item"><img src="/images/rev-07.jpg" alt="Отзыв"></div>
-      <div class="review__item"><img src="/images/rev-08.jpg" alt="Отзыв"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT — 10: фото справа, текст слева, новый текст -->
+<!-- 10: ABOUT после "За гранью сна" -->
 <section class="about" id="about">
   <div class="about__inner about__inner--flipped">
     <div class="about__text">
@@ -355,11 +199,142 @@
   </div>
 </section>
 
-<!-- CONTACT — 11: убрано фото, новый текст -->
+<!-- SHOP — 6,7,8: исправления -->
+<section class="shop" id="shop">
+  <div class="shop__inner">
+    <div class="section__head">
+      <p class="section__kicker">— shop —</p>
+      <h2 class="section__title">Магазин</h2>
+    </div>
+
+    <h3 class="shop__category">Интерьерные картины</h3>
+    <p class="shop__category-desc">Преображение пространства через искусство. Картины, которые не просто висят — они меняют энергию комнаты.</p>
+    <p class="shop__available">В наличии</p>
+    <div class="shop__grid">
+      <div class="shop__item">
+        <div class="shop__img" style="background-image:url('/images/space-01.jpg')"></div>
+        <h4 class="shop__name">Внутренний огонь</h4>
+        <p class="shop__desc">Энергия пламени в абстрактной форме. Для интерьера, который говорит о силе.</p>
+        <a href="#contact" class="btn btn--small">Узнать цену</a>
+      </div>
+      <div class="shop__item">
+        <div class="shop__img" style="background-image:url('/images/space-02.jpg')"></div>
+        <h4 class="shop__name">Многогранность бытия</h4>
+        <p class="shop__desc">Слои смыслов, перетекающие друг в друга. Каждый раз видишь новое.</p>
+        <a href="#contact" class="btn btn--small">Узнать цену</a>
+      </div>
+      <div class="shop__item">
+        <div class="shop__img" style="background-image:url('/images/space-03.jpg')"></div>
+        <h4 class="shop__name">Пробуждение</h4>
+        <p class="shop__desc">Свет прорывается сквозь слои. Картина для пространства, которое хочет ожить.</p>
+        <a href="#contact" class="btn btn--small">Узнать цену</a>
+      </div>
+    </div>
+
+    <h3 class="shop__category">Кастомизация вещей</h3>
+    <p class="shop__category-desc">Каждая вещь — это артефакт внутренней силы того, кто её носит. Надеваешь и ощущаешь, что энергии стало ещё больше, как и гениальных идей.</p>
+    <p class="shop__available">В наличии</p>
+    <div class="shop__grid">
+      <div class="shop__item shop__item--custom">
+        <div class="series__carousel" data-carousel style="aspect-ratio:9/16; border-radius:8px;">
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-image:url('/images/shop-custom-01.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+            <div class="carousel__slide" style="background-image:url('/images/shop-custom-02.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+            <div class="carousel__slide" style="background-image:url('/images/shop-custom-03.jpg'); background-size:contain; background-repeat:no-repeat; background-color:var(--bg-2);"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+          <div class="carousel__dots"></div>
+        </div>
+        <h4 class="shop__name">Худи «Космос»</h4>
+        <p class="shop__desc">Ручная роспись. Уникальный экземпляр.</p>
+        <a href="#contact" class="btn btn--small">Заказать</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASTERCLASS -->
+<section class="evenings" id="masterclass">
+  <div class="evenings__inner">
+    <div class="section__head">
+      <p class="section__kicker">— experience —</p>
+      <h2 class="section__title">Мастер-классы</h2>
+      <p class="section__sub">Искусство как переживание. Не урок — приключение со сценарием.</p>
+    </div>
+
+    <div class="formats">
+      <article class="format">
+        <div class="format__photos series__carousel" data-carousel>
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-06.jpg')"></div>
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-04.jpg')"></div>
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-05.jpg')"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+          <div class="carousel__dots"></div>
+        </div>
+        <h3 class="format__name">Картина-портал</h3>
+        <p class="format__desc">Индивидуальный мастер-класс по флюид-арту. Вместе создадим атмосферу под ваше состояние — музыка, свет, дыхание. Вы уходите с картиной-порталом: окном в своё внутреннее пространство, которое можно повесить на стену и возвращаться к нему.</p>
+        <p class="format__price">6 000 ₽ <span>/ 3 часа</span></p>
+        <a href="#contact" class="btn">Записаться</a>
+      </article>
+
+      <article class="format">
+        <div class="format__photos series__carousel" data-carousel>
+          <div class="carousel__track">
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-01.jpg')"></div>
+            <div class="carousel__slide" style="background-image:url('/images/mk-new-02.jpg')"></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous">&#8249;</button>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next">&#8250;</button>
+          <div class="carousel__dots"></div>
+        </div>
+        <h3 class="format__name">Вещь-артефакт силы</h3>
+        <p class="format__desc">Вместе пройдём все этапы арт-терапии и создадим вещь — молчаливое высказывание о вашей личности. Напоминание о ценностях, амулет веры в себя и стильный акцент гардероба.</p>
+        <p class="format__price">4 000 ₽ <span>/ 3 часа</span></p>
+        <a href="#contact" class="btn">Записаться</a>
+      </article>
+
+      <article class="format">
+        <div class="format__photos">
+          <img src="/images/mk-together.jpg" alt="Мастер-класс для двоих" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">
+        </div>
+        <h3 class="format__name">Стань ближе</h3>
+        <p class="format__desc">Вместе с любимым человеком или подругой создадите картину — отражение синергии ваших ярких энергий. Два ритма, одно полотно.</p>
+        <p class="format__price">8 000 ₽ <span>/ 3 часа · для двоих</span></p>
+        <a href="#contact" class="btn">Записаться</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS — 9: 1,2 крупно, остальные меньше -->
+<section class="reviews" id="reviews">
+  <div class="reviews__inner">
+    <div class="section__head">
+      <p class="section__kicker">— reviews —</p>
+      <h2 class="section__title">Отзывы</h2>
+    </div>
+    <div class="reviews__grid">
+      <div class="review__item review__item--large"><img src="/images/rev-01.jpg" alt="Отзыв"></div>
+      <div class="review__item review__item--large"><img src="/images/rev-02.jpg" alt="Отзыв"></div>
+      <div class="review__item"><img src="/images/rev-03.jpg" alt="Отзыв"></div>
+      <div class="review__item"><img src="/images/rev-04.jpg" alt="Отзыв"></div>
+      <div class="review__item"><img src="/images/rev-05.jpg" alt="Отзыв"></div>
+      <div class="review__item"><img src="/images/rev-06.jpg" alt="Отзыв"></div>
+      <div class="review__item"><img src="/images/rev-07.jpg" alt="Отзыв"></div>
+      <div class="review__item"><img src="/images/rev-08.jpg" alt="Отзыв"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — 1: текст меньше, 11: без фото -->
 <section class="contact" id="contact">
   <div class="contact__inner">
     <p class="section__kicker">— contact —</p>
-    <h2 class="contact__title">Если хочешь узнать о чём-то подробнее<br>или предложить идею сотрудничества —<br><em>смело пиши.</em></h2>
+    <h2 class="contact__title contact__title--small">Если хочешь узнать о чём-то подробнее<br>или предложить идею сотрудничества —<br><em>смело пиши.</em></h2>
 
     <div class="contact__links">
       <a href="https://t.me/polly_makk" target="_blank" class="contact__link">Telegram</a>
@@ -374,7 +349,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer__inner">
     <span>© 2026 Lilian Villaret</span>
@@ -382,6 +356,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=7"></script>
+<script src="/js/main.js?v=8"></script>
 </body>
 </html>

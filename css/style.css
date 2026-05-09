@@ -223,6 +223,11 @@ body::before {
   font-style: italic;
   text-shadow: 0 0 30px rgba(167, 139, 250, 0.25);
 }
+/* Smaller manifesto text */
+.manifesto__text--small {
+  font-size: clamp(20px, 3vw, 36px);
+}
+
 .manifesto__sub {
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -567,6 +572,62 @@ body::before {
   font-style: italic;
 }
 
+/* ============================================ DREAMS COMPACT STICKER */
+.dreams--compact {
+  padding: 60px 48px;
+  background: var(--bg);
+}
+.dreams__sticker {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 36px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-hover);
+  border-radius: 4px;
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 20px rgba(30, 21, 53, 0.06);
+}
+.dreams__sticker-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-style: italic;
+  color: var(--neon-violet);
+  margin-bottom: 12px;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.2);
+}
+.dreams__sticker-text {
+  font-size: 14px;
+  color: var(--ink-dim);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.dreams__sticker-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+}
+.dreams__sticker-soon {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--neon-sky);
+  text-transform: lowercase;
+  text-shadow: 0 0 10px rgba(126, 182, 255, 0.3);
+}
+
+/* ============================================ SHOP AVAILABLE LABEL */
+.shop__available {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--neon-sky);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(126, 182, 255, 0.3);
+}
+
+/* review sizes defined in reviews grid section */
+
 /* ============================================ CONTAIN CAROUSEL (wearable) */
 .series__carousel--contain {
   aspect-ratio: 3/4;
@@ -680,12 +741,20 @@ body::before {
   padding: 0 48px;
 }
 .reviews__grid {
-  columns: 2;
-  column-gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.review__item--large {
+  grid-column: span 2;
+}
+.review__item:not(.review__item--large) img {
+  max-height: 200px;
+  object-fit: contain;
+  background: var(--bg-2);
+  width: 100%;
 }
 .review__item {
-  break-inside: avoid;
-  margin-bottom: 24px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -743,6 +812,9 @@ body::before {
   letter-spacing: -0.01em;
 }
 .contact__title em { color: var(--neon-violet); font-style: italic; text-shadow: 0 0 30px rgba(167, 139, 250, 0.25); }
+.contact__title--small {
+  font-size: clamp(24px, 3.5vw, 44px);
+}
 .contact__sub {
   font-family: var(--serif);
   font-size: 20px;
@@ -887,7 +959,9 @@ body::before {
 
   .contact__links { gap: 24px; }
   .reviews__inner { padding: 0 24px; }
-  .reviews__grid { columns: 1; }
+  .reviews__grid { grid-template-columns: 1fr; }
+  .review__item--large { grid-column: span 1; }
+  .dreams--compact { padding: 40px 24px; }
   .shop__inner { padding: 0 24px; }
   .shop__grid { grid-template-columns: 1fr; }
   .about__inner--flipped { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
