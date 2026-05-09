@@ -203,6 +203,19 @@ body::before {
   50% { opacity: 1; transform: translateY(6px); }
 }
 
+/* ============================================ HERO PHOTO FULL */
+.hero-photo-full {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.hero-photo-full img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line-hover);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+}
+
 /* ============================================ MANIFESTO */
 .manifesto {
   padding: 180px 48px;
