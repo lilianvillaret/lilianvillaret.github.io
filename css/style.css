@@ -207,14 +207,12 @@ body::before {
 .hero-photo-full {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 8px;
 }
 .hero-photo-full img {
   width: 100%;
-  border-radius: 0;
-  border: none;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-radius: 12px;
+  border: 1px solid var(--line);
 }
 
 /* ============================================ MANIFESTO */
