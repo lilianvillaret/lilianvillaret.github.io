@@ -217,7 +217,7 @@ body::before {
 
 /* ============================================ MANIFESTO */
 .manifesto {
-  padding: 180px 48px;
+  padding: 100px 48px;
   text-align: center;
   background: var(--bg);
   position: relative;
@@ -252,7 +252,7 @@ body::before {
 /* ============================================ SECTION HEAD */
 .section__head {
   max-width: 800px;
-  margin: 0 auto 100px;
+  margin: 0 auto 60px;
   text-align: center;
   padding: 0 48px;
 }
@@ -282,7 +282,7 @@ body::before {
 
 /* ============================================ WORKS / SERIES */
 .works {
-  padding: 160px 0 120px;
+  padding: 80px 0 60px;
   background: var(--bg);
 }
 .series {
@@ -295,7 +295,7 @@ body::before {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
-  margin-bottom: 160px;
+  margin-bottom: 80px;
 }
 .series__item--reverse { direction: rtl; }
 .series__item--reverse > * { direction: ltr; }
@@ -422,7 +422,7 @@ body::before {
 
 /* ============================================ EVENINGS */
 .evenings {
-  padding: 160px 0;
+  padding: 80px 0;
   background: var(--bg-2);
   position: relative;
 }
@@ -495,7 +495,7 @@ body::before {
 
 /* ============================================ DREAMS TEASER */
 .dreams {
-  padding: 180px 48px;
+  padding: 80px 48px;
   text-align: center;
   background: var(--bg);
   position: relative;
@@ -536,7 +536,7 @@ body::before {
 
 /* ============================================ ABOUT */
 .about {
-  padding: 160px 0;
+  padding: 80px 0;
   background: var(--bg-2);
   position: relative;
 }
@@ -697,7 +697,7 @@ body::before {
 
 /* ============================================ SHOP */
 .shop {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--bg);
 }
 .shop__inner {
@@ -773,7 +773,7 @@ body::before {
 
 /* ============================================ REVIEWS SPLIT */
 .reviews {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--bg);
 }
 .reviews__inner--split {
@@ -856,7 +856,7 @@ body::before {
 
 /* ============================================ CONTACT */
 .contact {
-  padding: 180px 48px;
+  padding: 80px 48px;
   text-align: center;
   background: var(--bg);
 }
