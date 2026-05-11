@@ -1005,6 +1005,10 @@ body::before {
     margin-bottom: 100px;
     direction: ltr;
   }
+  .series__item .series__text,
+  .series__item--reverse .series__text {
+    order: -1;
+  }
 
   .carousel__btn { opacity: 0.7; width: 36px; height: 36px; font-size: 20px; }
 
