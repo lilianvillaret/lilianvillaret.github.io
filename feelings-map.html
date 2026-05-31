@@ -5,7 +5,7 @@
 <title>Карта чувств и оттенков — Lilian Villaret</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-  /* Полка 26×26×76 — печать на боковину (26×26). Два квадрата. */
+  /* Плакат на боковину полки 26×26×76 — одна квадратная страница 26×26 */
   @page { size: 260mm 260mm; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -14,13 +14,14 @@
     --serif: 'Cormorant Garamond', 'Times New Roman', serif;
     --sans: 'Inter', -apple-system, system-ui, sans-serif;
   }
-  body { background: #E4DDEF; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 12px; font-family: var(--sans); }
+  body { background: #E4DDEF; display: flex; justify-content: center; padding: 12px; font-family: var(--sans); }
 
   .page {
     width: 260mm; height: 260mm;
     background: var(--bg);
     padding: 15mm;            /* отступ 1.5 см от края полки */
     display: flex; flex-direction: column;
+    justify-content: space-between;   /* блоки равномерно по высоте, без пустот в карточках */
     position: relative; overflow: hidden;
     box-shadow: 0 4px 20px rgba(90,77,120,0.12);
   }
@@ -30,25 +31,25 @@
   }
   .page::before { top: 0; } .page::after { bottom: 0; }
 
-  /* Header — компактный */
-  .hdr { text-align: center; margin-bottom: 2mm; }
+  /* Header */
+  .hdr { text-align: center; }
   .hdr-brand { font-family: var(--serif); font-weight: 300; font-size: 11px; color: var(--ink-faint); letter-spacing: 5px; text-transform: uppercase; }
-  .hdr-title { font-family: var(--serif); font-weight: 400; font-size: 30px; color: var(--ink); letter-spacing: 2px; margin: 0.5mm 0; }
-  .hdr-sub { font-family: var(--serif); font-weight: 300; font-style: italic; font-size: 12px; color: var(--ink-dim); letter-spacing: 1px; }
+  .hdr-title { font-family: var(--serif); font-weight: 400; font-size: 32px; color: var(--ink); letter-spacing: 2px; margin: 0.5mm 0; }
+  .hdr-sub { font-family: var(--serif); font-weight: 300; font-style: italic; font-size: 13px; color: var(--ink-dim); letter-spacing: 1px; }
   .hdr-line { width: 36mm; height: 1px; margin: 1.5mm auto; background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-sky), var(--neon-violet), transparent); }
-  .hdr-intro { font-family: var(--serif); font-size: 11px; color: var(--ink-dim); font-style: italic; text-align: center; margin-bottom: 2.5mm; }
+  .hdr-intro { font-family: var(--serif); font-size: 12px; color: var(--ink-dim); font-style: italic; text-align: center; }
 
-  /* ===== СТР. 1 — сетка оттенков: 2 колонки × 5 рядов, карточки уменьшены ===== */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; flex: 1; }
+  /* Сетка оттенков — карточки прижаты к тексту (align-content/start, без flex-растяжения) */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; align-content: start; }
 
   .card { border-radius: 2.5mm; padding: 2.5mm 3mm; display: flex; gap: 2.5mm; align-items: flex-start; }
   .swatch { width: 7mm; height: 7mm; border-radius: 50%; flex-shrink: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
-  .info { display: flex; flex-direction: column; gap: 0.1mm; }
-  .nm { font-family: var(--serif); font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
-  .ds { font-family: var(--serif); font-style: italic; font-size: 8.5px; line-height: 1.3; }
-  .hn { font-family: var(--sans); font-weight: 400; font-size: 7px; letter-spacing: 1px; margin-top: 0.3mm; }
-  .sc { font-family: var(--sans); font-weight: 300; font-size: 6px; line-height: 1.25; margin-top: 0.2mm; }
-  .pt { font-family: var(--sans); font-weight: 400; font-size: 6.5px; margin-top: 0.2mm; }
+  .info { display: flex; flex-direction: column; gap: 0.2mm; }
+  .nm { font-family: var(--serif); font-weight: 500; font-size: 14px; letter-spacing: 0.5px; }
+  .ds { font-family: var(--serif); font-style: italic; font-size: 10px; line-height: 1.3; }
+  .hn { font-family: var(--sans); font-weight: 400; font-size: 8.5px; letter-spacing: 1px; margin-top: 0.3mm; }
+  .sc { font-family: var(--sans); font-weight: 300; font-size: 7.5px; line-height: 1.3; margin-top: 0.2mm; }
+  .pt { font-family: var(--sans); font-weight: 400; font-size: 7.5px; margin-top: 0.2mm; }
 
   /* Card colors */
   .c-vi { background: linear-gradient(135deg, #2D1B69, #1a1040); }
@@ -91,44 +92,43 @@
   .c-dk .nm { color: #E8E4F0; } .c-dk .ds { color: #C4B5FD; } .c-dk .hn { color: #A78BFA; } .c-dk .sc, .c-dk .pt { color: #9B8EC4; }
   .c-dk .swatch { background: radial-gradient(circle, #374151, #111827); }
 
-  /* ===== СТР. 2 — Формы и текстуры отдельно: 2 колонки × 3 ряда, крупно ===== */
-  .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; flex: 1; }
-  .fc { border-radius: 3mm; padding: 6mm 6mm; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; }
-  .fc-icon { font-size: 40px; margin-bottom: 2mm; line-height: 1; }
-  .fc-name { font-family: var(--serif); font-weight: 500; font-size: 20px; letter-spacing: 1px; margin-bottom: 1.5mm; }
-  .fc-desc { font-family: var(--serif); font-style: italic; font-size: 12px; line-height: 1.4; }
-  .fc-src { font-family: var(--sans); font-weight: 300; font-size: 8px; letter-spacing: 0.5px; margin-top: 2mm; opacity: 0.7; }
+  /* Формы и текстуры — компактный ряд из 6 на той же странице */
+  .btm-title { font-family: var(--serif); font-size: 17px; color: var(--ink); text-align: center; letter-spacing: 2px; margin-bottom: 2mm; }
+  .btm-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.5mm; }
+  .bc { border-radius: 2.5mm; padding: 2.5mm 2mm; text-align: center; }
+  .bc-light { background: rgba(21,13,46,0.05); }
+  .bc-icon { font-size: 18px; margin-bottom: 0.8mm; line-height: 1; }
+  .bc-name { font-family: var(--serif); font-weight: 500; font-size: 11px; color: var(--ink); margin-bottom: 0.5mm; }
+  .bc-desc { font-family: var(--serif); font-style: italic; font-size: 8px; color: var(--ink-dim); line-height: 1.35; }
+  .bc-src { font-family: var(--sans); font-weight: 300; font-size: 6px; margin-top: 0.6mm; }
 
-  .fc-light { background: rgba(21,13,46,0.05); }
-  .fc-light .fc-icon { color: var(--ink-dim); } .fc-light .fc-name { color: var(--ink); } .fc-light .fc-desc { color: var(--ink-dim); } .fc-light .fc-src { color: var(--ink-faint); }
-  .fc-cr { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
-  .fc-cr .fc-icon, .fc-cr .fc-name { color: #78350F; } .fc-cr .fc-desc { color: #92400E; } .fc-cr .fc-src { color: #A16207; }
-  .fc-rg { background: linear-gradient(135deg, #E5E7EB, #D1D5DB); }
-  .fc-rg .fc-icon, .fc-rg .fc-name { color: #1F2937; } .fc-rg .fc-desc { color: #374151; } .fc-rg .fc-src { color: #4B5563; }
-  .fc-tr { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); }
-  .fc-tr .fc-icon, .fc-tr .fc-name { color: #3B0764; } .fc-tr .fc-desc { color: #5B21B6; } .fc-tr .fc-src { color: #6D28D9; }
+  .bc-cr { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+  .bc-cr .bc-name { color: #78350F; } .bc-cr .bc-desc { color: #92400E; } .bc-cr .bc-src { color: #A16207; }
+  .bc-rg { background: linear-gradient(135deg, #E5E7EB, #D1D5DB); }
+  .bc-rg .bc-name { color: #1F2937; } .bc-rg .bc-desc { color: #374151; } .bc-rg .bc-src { color: #4B5563; }
+  .bc-tr { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); }
+  .bc-tr .bc-name { color: #3B0764; } .bc-tr .bc-desc { color: #5B21B6; } .bc-tr .bc-src { color: #6D28D9; }
 
   /* Footer */
-  .ftr { display: flex; justify-content: space-between; align-items: center; margin-top: 2.5mm; }
-  .ftr-brand { font-family: var(--serif); font-size: 13px; color: var(--ink); letter-spacing: 2px; }
-  .ftr-cta { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink); letter-spacing: 1px; text-align: center; }
+  .ftr { display: flex; justify-content: space-between; align-items: center; }
+  .ftr-brand { font-family: var(--serif); font-size: 14px; color: var(--ink); letter-spacing: 2px; }
+  .ftr-cta { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--ink); letter-spacing: 1px; text-align: center; }
   .ftr-cta em { color: var(--neon-violet); font-style: normal; }
-  .ftr-info { font-family: var(--sans); font-weight: 300; font-size: 7px; color: var(--ink-faint); text-align: right; letter-spacing: 0.5px; }
+  .ftr-info { font-family: var(--sans); font-weight: 300; font-size: 7.5px; color: var(--ink-faint); text-align: right; letter-spacing: 0.5px; }
 
-  @media print { body { background: white; padding: 0; gap: 0; } .page { box-shadow: none; page-break-after: always; } }
+  @media print { body { background: white; padding: 0; } .page { box-shadow: none; } }
 </style>
 </head>
 <body>
-
-<!-- ============ СТРАНИЦА 1 — КАРТА ОТТЕНКОВ (26×26) ============ -->
 <div class="page">
+
   <div class="hdr">
     <div class="hdr-brand">Лилиан Вилларе</div>
     <div class="hdr-title">Карта чувств и&nbsp;оттенков</div>
     <div class="hdr-sub">какой цвет откликается &mdash; та картина ваша</div>
+    <div class="hdr-line"></div>
+    <div class="hdr-intro">Цвет &mdash; язык подсознания. Мы&nbsp;выбираем оттенки, резонирующие с&nbsp;внутренним состоянием. Доверьтесь ощущениям.</div>
   </div>
-  <div class="hdr-line"></div>
-  <div class="hdr-intro">Цвет &mdash; язык подсознания. Мы&nbsp;выбираем оттенки, резонирующие с&nbsp;внутренним состоянием. Доверьтесь ощущениям.</div>
 
   <div class="grid">
     <div class="card c-vi"><div class="swatch"></div><div class="info">
@@ -212,29 +212,16 @@
     </div></div>
   </div>
 
-  <div class="ftr">
-    <div class="ftr-brand">Лилиан Вилларе</div>
-    <div class="ftr-info">флюид-арт &middot; ручная работа<br>каждая &mdash; в&nbsp;единственном экземпляре</div>
-  </div>
-</div>
-
-<!-- ============ СТРАНИЦА 2 — ФОРМЫ И ТЕКСТУРЫ (26×26) ============ -->
-<div class="page">
-  <div class="hdr">
-    <div class="hdr-brand">Лилиан Вилларе</div>
-    <div class="hdr-title">Формы и&nbsp;текстуры</div>
-    <div class="hdr-sub">не только цвет говорит с&nbsp;вами</div>
-  </div>
-  <div class="hdr-line"></div>
-  <div class="hdr-intro">Поверхность картины ловит взгляд раньше слов. Линии, слои и&nbsp;трещины работают с&nbsp;телом напрямую.</div>
-
-  <div class="fgrid">
-    <div class="fc fc-light"><div class="fc-icon">&#9676;</div><div class="fc-name">Ячейки</div><div class="fc-desc">Природные формы &mdash; биофилия, стресс &minus;60%</div><div class="fc-src">Taylor et al.</div></div>
-    <div class="fc fc-light"><div class="fc-icon">&#8767;</div><div class="fc-name">Потоки</div><div class="fc-desc">Плавные линии снижают активность миндалины</div><div class="fc-src">Bar &amp; Neta</div></div>
-    <div class="fc fc-light"><div class="fc-icon">&#9641;</div><div class="fc-name">Слои</div><div class="fc-desc">Эффект &laquo;окна в&nbsp;другой мир&raquo; через наложение</div><div class="fc-src">Zeki</div></div>
-    <div class="fc fc-cr"><div class="fc-icon">&#10038;</div><div class="fc-name">Трещины</div><div class="fc-desc">Ваби-саби: красота несовершенства, рост через боль</div><div class="fc-src">Пастуро</div></div>
-    <div class="fc fc-rg"><div class="fc-icon">&#9687;</div><div class="fc-name">Рельеф</div><div class="fc-desc">Мозг &laquo;трогает&raquo; картину глазами &mdash; интимность</div><div class="fc-src">Gallese</div></div>
-    <div class="fc fc-tr"><div class="fc-icon">&#9674;</div><div class="fc-name">Прозрачность</div><div class="fc-desc">Свет сквозь слои &mdash; глубина и&nbsp;свечение</div><div class="fc-src">Cavanagh</div></div>
+  <div class="btm">
+    <div class="btm-title">Формы и&nbsp;текстуры</div>
+    <div class="btm-grid">
+      <div class="bc bc-light"><div class="bc-icon">&#9676;</div><div class="bc-name">Ячейки</div><div class="bc-desc">Природные формы &mdash; биофилия, стресс &minus;60%</div><div class="bc-src">Taylor et al.</div></div>
+      <div class="bc bc-light"><div class="bc-icon">&#8767;</div><div class="bc-name">Потоки</div><div class="bc-desc">Плавные линии снижают активность миндалины</div><div class="bc-src">Bar &amp; Neta</div></div>
+      <div class="bc bc-light"><div class="bc-icon">&#9641;</div><div class="bc-name">Слои</div><div class="bc-desc">Эффект &laquo;окна в&nbsp;другой мир&raquo; через наложение</div><div class="bc-src">Zeki</div></div>
+      <div class="bc bc-cr"><div class="bc-icon">&#10038;</div><div class="bc-name">Трещины</div><div class="bc-desc">Ваби-саби: красота несовершенства, рост через боль</div><div class="bc-src">Пастуро</div></div>
+      <div class="bc bc-rg"><div class="bc-icon">&#9687;</div><div class="bc-name">Рельеф</div><div class="bc-desc">Мозг &laquo;трогает&raquo; картину глазами &mdash; интимность</div><div class="bc-src">Gallese</div></div>
+      <div class="bc bc-tr"><div class="bc-icon">&#9674;</div><div class="bc-name">Прозрачность</div><div class="bc-desc">Свет сквозь слои &mdash; глубина и&nbsp;свечение</div><div class="bc-src">Cavanagh</div></div>
+    </div>
   </div>
 
   <div class="ftr">
@@ -242,7 +229,7 @@
     <div class="ftr-cta">Картина выбирает хозяина. <em>Какая позвала вас?</em></div>
     <div class="ftr-info">флюид-арт &middot; ручная работа<br>каждая &mdash; в&nbsp;единственном экземпляре</div>
   </div>
-</div>
 
+</div>
 </body>
 </html>
