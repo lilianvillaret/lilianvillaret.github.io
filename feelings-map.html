@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Карта чувств и оттенков — Lilian Villaret</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: 297mm 420mm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #F0EDFA; --ink: #150D2E; --ink-dim: #5A4D78; --ink-faint: #8878A8;
+    --neon-violet: #A78BFA; --neon-sky: #7DD3FC;
+    --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+  body { background: #E4DDEF; display: flex; justify-content: center; padding: 10px; font-family: var(--sans); }
+
+  .page {
+    width: 297mm; height: 420mm;
+    background: var(--bg);
+    padding: 7mm 10mm 5mm;
+    display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(90,77,120,0.12);
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-sky), var(--neon-violet), transparent);
+  }
+  .page::before { top: 0; } .page::after { bottom: 0; }
+
+  /* Header — compact */
+  .hdr { text-align: center; margin-bottom: 2mm; }
+  .hdr-brand { font-family: var(--serif); font-weight: 300; font-size: 12px; color: var(--ink-faint); letter-spacing: 5px; text-transform: uppercase; }
+  .hdr-title { font-family: var(--serif); font-weight: 400; font-size: 36px; color: var(--ink); letter-spacing: 3px; margin: 1mm 0; }
+  .hdr-sub { font-family: var(--serif); font-weight: 300; font-style: italic; font-size: 14px; color: var(--ink-dim); letter-spacing: 1px; }
+  .hdr-line { width: 40mm; height: 1px; margin: 1.5mm auto 2mm; background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-sky), var(--neon-violet), transparent); }
+  .hdr-intro { font-family: var(--serif); font-size: 12px; color: var(--ink-dim); font-style: italic; text-align: center; margin-bottom: 2mm; }
+
+  /* Grid — fills remaining space */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; flex: 1; }
+
+  .card { border-radius: 3mm; padding: 3mm 4mm; display: flex; gap: 3mm; align-items: flex-start; }
+  .swatch { width: 9mm; height: 9mm; border-radius: 50%; flex-shrink: 0; box-shadow: 0 1px 5px rgba(0,0,0,0.15); }
+  .info { display: flex; flex-direction: column; gap: 0.2mm; }
+  .nm { font-family: var(--serif); font-weight: 500; font-size: 14px; letter-spacing: 1px; }
+  .ds { font-family: var(--serif); font-style: italic; font-size: 10px; line-height: 1.35; }
+  .hn { font-family: var(--sans); font-weight: 400; font-size: 8.5px; letter-spacing: 1.5px; margin-top: 0.3mm; }
+  .sc { font-family: var(--sans); font-weight: 300; font-size: 7.5px; line-height: 1.3; margin-top: 0.3mm; }
+  .pt { font-family: var(--sans); font-weight: 400; font-size: 7.5px; margin-top: 0.3mm; }
+
+  /* Card colors */
+  .c-vi { background: linear-gradient(135deg, #2D1B69, #1a1040); }
+  .c-vi .nm, .c-vi .ds { color: #E8E4F0; } .c-vi .hn { color: #C4B5FD; } .c-vi .sc, .c-vi .pt { color: #B8A8E0; }
+  .c-vi .swatch { background: radial-gradient(circle, #C4B5FD, #7C3AED); }
+
+  .c-tq { background: linear-gradient(135deg, #134E4A, #042f2e); }
+  .c-tq .nm, .c-tq .ds { color: #CCFBF1; } .c-tq .hn { color: #99F6E4; } .c-tq .sc, .c-tq .pt { color: #A7F3D0; }
+  .c-tq .swatch { background: radial-gradient(circle, #99F6E4, #0D9488); }
+
+  .c-pk { background: linear-gradient(135deg, #701A75, #4a044e); }
+  .c-pk .nm, .c-pk .ds { color: #FDF2F8; } .c-pk .hn { color: #F5D0FE; } .c-pk .sc, .c-pk .pt { color: #E9D5F5; }
+  .c-pk .swatch { background: radial-gradient(circle, #F5D0FE, #D946EF); }
+
+  .c-gd { background: linear-gradient(135deg, #78350F, #451a03); }
+  .c-gd .nm, .c-gd .ds { color: #FEF3C7; } .c-gd .hn { color: #FDE68A; } .c-gd .sc, .c-gd .pt { color: #FCD34D; }
+  .c-gd .swatch { background: radial-gradient(circle, #FDE68A, #D97706); }
+
+  .c-gr { background: linear-gradient(135deg, #14532D, #052e16); }
+  .c-gr .nm, .c-gr .ds { color: #ECFDF5; } .c-gr .hn { color: #A7F3D0; } .c-gr .sc, .c-gr .pt { color: #86EFAC; }
+  .c-gr .swatch { background: radial-gradient(circle, #A7F3D0, #059669); }
+
+  .c-rd { background: linear-gradient(135deg, #7F1D1D, #450a0a); }
+  .c-rd .nm, .c-rd .ds { color: #FEF2F2; } .c-rd .hn { color: #FECACA; } .c-rd .sc, .c-rd .pt { color: #FCA5A5; }
+  .c-rd .swatch { background: radial-gradient(circle, #FECACA, #DC2626); }
+
+  .c-wh { background: linear-gradient(135deg, #E8E4F0, #D6CCE8); }
+  .c-wh .nm { color: #150D2E; } .c-wh .ds { color: #3B2D5C; } .c-wh .hn { color: #5A4D78; } .c-wh .sc, .c-wh .pt { color: #5A4D78; }
+  .c-wh .swatch { background: radial-gradient(circle, #FFF, #E8E4F0); box-shadow: 0 2px 6px rgba(90,77,120,0.2); }
+
+  .c-or { background: linear-gradient(135deg, #9A3412, #7C2D12); }
+  .c-or .nm, .c-or .ds { color: #FFF7ED; } .c-or .hn { color: #FED7AA; } .c-or .sc, .c-or .pt { color: #FDBA74; }
+  .c-or .swatch { background: radial-gradient(circle, #FED7AA, #EA580C); }
+
+  .c-si { background: linear-gradient(135deg, #D1D5DB, #9CA3AF); }
+  .c-si .nm { color: #111827; } .c-si .ds { color: #1F2937; } .c-si .hn { color: #374151; } .c-si .sc, .c-si .pt { color: #374151; }
+  .c-si .swatch { background: radial-gradient(circle, #F9FAFB, #D1D5DB); box-shadow: 0 2px 6px rgba(0,0,0,0.12), inset 0 1px 2px rgba(255,255,255,0.5); }
+
+  .c-dk { background: linear-gradient(135deg, #1C1132, #0a0618); }
+  .c-dk .nm { color: #E8E4F0; } .c-dk .ds { color: #C4B5FD; } .c-dk .hn { color: #A78BFA; } .c-dk .sc, .c-dk .pt { color: #9B8EC4; }
+  .c-dk .swatch { background: radial-gradient(circle, #374151, #111827); }
+
+  /* Bottom row: 6 cards */
+  .btm { margin-top: 2.5mm; }
+  .btm-title { font-family: var(--serif); font-size: 16px; color: var(--ink); text-align: center; letter-spacing: 2px; margin-bottom: 2mm; }
+  .btm-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.5mm; }
+  .bc { border-radius: 2.5mm; padding: 2.5mm 3mm; text-align: center; }
+  .bc-light { background: rgba(21,13,46,0.05); }
+  .bc-icon { font-size: 16px; margin-bottom: 0.5mm; }
+  .bc-name { font-family: var(--serif); font-weight: 500; font-size: 10px; color: var(--ink); margin-bottom: 0.5mm; }
+  .bc-desc { font-family: var(--serif); font-style: italic; font-size: 7.5px; color: var(--ink-dim); line-height: 1.4; }
+  .bc-src { font-family: var(--sans); font-weight: 300; font-size: 6px; margin-top: 0.5mm; }
+
+  .bc-cr { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+  .bc-cr .bc-name { color: #78350F; } .bc-cr .bc-desc { color: #92400E; } .bc-cr .bc-src { color: #A16207; }
+  .bc-rg { background: linear-gradient(135deg, #E5E7EB, #D1D5DB); }
+  .bc-rg .bc-name { color: #1F2937; } .bc-rg .bc-desc { color: #374151; } .bc-rg .bc-src { color: #4B5563; }
+  .bc-tr { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); }
+  .bc-tr .bc-name { color: #3B0764; } .bc-tr .bc-desc { color: #5B21B6; } .bc-tr .bc-src { color: #6D28D9; }
+
+  /* Footer */
+  .ftr { display: flex; justify-content: space-between; align-items: center; margin-top: 2mm; }
+  .ftr-brand { font-family: var(--serif); font-size: 15px; color: var(--ink); letter-spacing: 3px; }
+  .ftr-cta { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink); letter-spacing: 2px; }
+  .ftr-cta em { color: var(--neon-violet); font-style: normal; }
+  .ftr-info { font-family: var(--sans); font-weight: 300; font-size: 8px; color: var(--ink-faint); text-align: right; letter-spacing: 1px; }
+
+  @media print { body { background: white; padding: 0; } .page { box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hdr">
+    <div class="hdr-brand">Лилиан Вилларе</div>
+    <div class="hdr-title">Карта чувств и&nbsp;оттенков</div>
+    <div class="hdr-sub">какой цвет откликается &mdash; та картина ваша</div>
+  </div>
+  <div class="hdr-line"></div>
+  <div class="hdr-intro">Цвет &mdash; язык подсознания. Мы&nbsp;выбираем оттенки, резонирующие с&nbsp;внутренним состоянием. Доверьтесь ощущениям.</div>
+
+  <div class="grid">
+    <div class="card c-vi"><div class="swatch"></div><div class="info">
+      <div class="nm">Фиолетовый</div>
+      <div class="ds">Глубина, интуиция, трансформация. Тянет, когда внутри созревает перемена.</div>
+      <div class="hn">Я готова к глубине</div>
+      <div class="sc">Кандинский: &laquo;остывший красный&raquo;. Люшер: слияние противоположностей</div>
+      <div class="pt">&rarr; &laquo;Фиолетовая вселенная&raquo;, Blue Heart</div>
+    </div></div>
+
+    <div class="card c-tq"><div class="swatch"></div><div class="info">
+      <div class="nm">Бирюзовый</div>
+      <div class="ds">Ясность, баланс, свобода. Хочется выдохнуть и&nbsp;найти равновесие.</div>
+      <div class="hn">Мне нужен баланс</div>
+      <div class="sc">Heller: цвет ясности. Palmer&nbsp;&amp;&nbsp;Schloss: холодные тона снижают тревожность</div>
+      <div class="pt">&rarr; Blue Heart, &laquo;Фиолетовая вселенная&raquo;</div>
+    </div></div>
+
+    <div class="card c-pk"><div class="swatch"></div><div class="info">
+      <div class="nm">Розовый</div>
+      <div class="ds">Нежность, принятие, забота о&nbsp;себе. Тепло не&nbsp;от&nbsp;кого-то, а&nbsp;от&nbsp;себя к&nbsp;себе.</div>
+      <div class="hn">Я хочу нежности</div>
+      <div class="sc">Schauss: снижает пульс. Пастуро: примирение с&nbsp;собой</div>
+      <div class="pt">&rarr; &laquo;Нежность&raquo;, &laquo;Цветение&raquo;</div>
+    </div></div>
+
+    <div class="card c-gd"><div class="swatch"></div><div class="info">
+      <div class="nm">Золотой</div>
+      <div class="ds">Радость, витальность, огонь. Энергия просит выхода &mdash; хочется действовать и&nbsp;светить.</div>
+      <div class="hn">Я хочу сиять</div>
+      <div class="sc">Иттен: символ плодородия. Гёте: &laquo;благородная сторона&raquo; тепла</div>
+      <div class="pt">&rarr; &laquo;Внутренний огонь&raquo;, &laquo;Тёплый свет&raquo;</div>
+    </div></div>
+
+    <div class="card c-gr"><div class="swatch"></div><div class="info">
+      <div class="nm">Зелёный</div>
+      <div class="ds">Обновление, рост, живая сила. Пора начать заново &mdash; мягко, как&nbsp;природа после зимы.</div>
+      <div class="hn">Я расту</div>
+      <div class="sc">Kaplan: зелень восстанавливает за&nbsp;5&nbsp;мин. Кандинский: &laquo;абсолютный покой&raquo;</div>
+      <div class="pt">&rarr; Dream Archive</div>
+    </div></div>
+
+    <div class="card c-rd"><div class="swatch"></div><div class="info">
+      <div class="nm">Красный</div>
+      <div class="ds">Страсть, прорыв, честность. Внутри кипит то, что нельзя игнорировать.</div>
+      <div class="hn">Я чувствую</div>
+      <div class="sc">Elliot&nbsp;&amp;&nbsp;Maier: повышает пульс. Кандинский: &laquo;безграничная мощь&raquo;</div>
+      <div class="pt">&rarr; Silent Scream</div>
+    </div></div>
+
+    <div class="card c-wh"><div class="swatch"></div><div class="info">
+      <div class="nm">Белый</div>
+      <div class="ds">Чистота, пространство, начало. Отпустить шум и&nbsp;найти центр в&nbsp;тишине.</div>
+      <div class="hn">Я отпускаю</div>
+      <div class="sc">Кандинский: &laquo;великое молчание, полное возможностей&raquo;</div>
+      <div class="pt">&rarr; во всех работах &mdash; воздух и&nbsp;свобода</div>
+    </div></div>
+
+    <div class="card c-or"><div class="swatch"></div><div class="info">
+      <div class="nm">Оранжевый</div>
+      <div class="ds">Витальность, тепло, жажда жизни. Энергия просыпается &mdash; хочется двигаться.</div>
+      <div class="hn">Я живу</div>
+      <div class="sc">Иттен: самый &laquo;земной&raquo; из&nbsp;тёплых. Heller: цвет оптимизма</div>
+      <div class="pt">&rarr; &laquo;Внутренний огонь&raquo;, &laquo;Тёплый свет&raquo;</div>
+    </div></div>
+
+    <div class="card c-si"><div class="swatch"></div><div class="info">
+      <div class="nm">Серебряный</div>
+      <div class="ds">Рефлексия, лунный свет. Увидеть себя со&nbsp;стороны &mdash; без оценки.</div>
+      <div class="hn">Я наблюдаю</div>
+      <div class="sc">Пастуро: цвет луны и&nbsp;интуиции. Арнхейм: внимание без возбуждения</div>
+      <div class="pt">&rarr; космические работы, Dream Archive</div>
+    </div></div>
+
+    <div class="card c-dk"><div class="swatch"></div><div class="info">
+      <div class="nm">Тёмный</div>
+      <div class="ds">Трансформация, защита, тайна. Побыть в&nbsp;глубине, чтобы родился новый свет.</div>
+      <div class="hn">Я трансформируюсь</div>
+      <div class="sc">Арнхейм: темнота делает свет &laquo;живым&raquo;. Zeki: граница света и&nbsp;тени</div>
+      <div class="pt">&rarr; космические работы, Silent Scream</div>
+    </div></div>
+  </div>
+
+  <div class="btm">
+    <div class="btm-title">Формы и&nbsp;текстуры</div>
+    <div class="btm-grid">
+      <div class="bc bc-light"><div class="bc-icon">&#9676;</div><div class="bc-name">Ячейки</div><div class="bc-desc">Природные формы &mdash; биофилия, стресс &minus;60%</div><div class="bc-src">Taylor et al.</div></div>
+      <div class="bc bc-light"><div class="bc-icon">&#8767;</div><div class="bc-name">Потоки</div><div class="bc-desc">Плавные линии снижают активность миндалины</div><div class="bc-src">Bar &amp; Neta</div></div>
+      <div class="bc bc-light"><div class="bc-icon">&#9641;</div><div class="bc-name">Слои</div><div class="bc-desc">Эффект &laquo;окна в&nbsp;другой мир&raquo; через наложение</div><div class="bc-src">Zeki</div></div>
+      <div class="bc bc-cr"><div class="bc-icon">&#10038;</div><div class="bc-name">Трещины</div><div class="bc-desc">Ваби-саби: красота несовершенства, рост через боль</div><div class="bc-src">Пастуро</div></div>
+      <div class="bc bc-rg"><div class="bc-icon">&#9687;</div><div class="bc-name">Рельеф</div><div class="bc-desc">Мозг &laquo;трогает&raquo; картину глазами &mdash; интимность</div><div class="bc-src">Gallese</div></div>
+      <div class="bc bc-tr"><div class="bc-icon">&#9674;</div><div class="bc-name">Прозрачность</div><div class="bc-desc">Свет сквозь слои &mdash; глубина и&nbsp;свечение</div><div class="bc-src">Cavanagh</div></div>
+    </div>
+  </div>
+
+  <div class="ftr">
+    <div class="ftr-brand">Лилиан Вилларе</div>
+    <div class="ftr-cta">Картина выбирает хозяина. <em>Какая позвала вас?</em></div>
+    <div class="ftr-info">флюид-арт &middot; ручная работа<br>каждая &mdash; в&nbsp;единственном экземпляре</div>
+  </div>
+
+</div>
+</body>
+</html>
