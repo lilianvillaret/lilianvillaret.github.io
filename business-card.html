@@ -174,8 +174,26 @@
     font-size: 7px;
     color: #999;
     letter-spacing: 0.8px;
-    margin-top: 2mm;
-    line-height: 1.8;
+    margin-top: 5mm;          /* опустить перечисление ниже */
+    display: flex;
+    flex-direction: column;
+    gap: 0.8mm;
+  }
+
+  .services span {
+    position: relative;
+    padding-left: 3mm;
+  }
+
+  .services span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.3mm;
+    height: 1.3mm;
+    border-radius: 50%;
+    background: #A78BFA;
   }
 
   .contacts {
@@ -285,7 +303,9 @@
         <div class="gold-line"></div>
         <div class="manifesto">Придаю чувствам форму.<br>Вы ощущаете &mdash; я проявляю.</div>
         <div class="services">
-          интерьерные картины<br>кастомизация<br>открытки с фразами-трансформами
+          <span>интерьерные картины</span>
+          <span>кастомизация</span>
+          <span>открытки с фразами-трансформами</span>
         </div>
       </div>
       <div class="contacts">
