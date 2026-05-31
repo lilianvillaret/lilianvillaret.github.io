@@ -184,7 +184,8 @@
   @media print {
     body { background: white; }
     .section-label { display: none; }
-    .sticker { box-shadow: none; }
+    .sticker { box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
+    .sheet-break { break-before: page; page-break-before: always; }
   }
 </style>
 </head>
@@ -228,6 +229,7 @@
   </div>
 </div>
 
+<div class="sheet-break"></div>
 <div class="section-label">Мини-стикер на товар &laquo;Ручная работа&raquo; (3.5 &times; 2 см) — по 8 тёмных и светлых</div>
 <div class="row">
   <div class="sticker sticker-mini"><div class="st-brand">Ручная работа</div><div class="st-tag">Лилиан Вилларе</div></div>
