@@ -28,71 +28,240 @@
 
   .row {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  /* === БАЗОВЫЙ СТИКЕР "Мини-картину можно взять просто так" === */
+  /* === БАЗОВЫЙ СТИКЕР === */
   .sticker {
-    width: 70mm;
-    height: 45mm;
     border-radius: 3mm;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2mm;
-    padding: 4mm;
     position: relative;
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(90, 77, 120, 0.12);
   }
 
-  .sticker::before {
+  /* === 1. "Мини-картину можно взять просто так" (для визиток-открыток) === */
+  .sticker-free {
+    width: 70mm;
+    height: 45mm;
+    background: #F0EDFA;
+    gap: 2mm;
+    padding: 4mm;
+  }
+
+  .sticker-free::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, #A78BFA, #7DD3FC, transparent);
   }
-  .sticker::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #7DD3FC, #A78BFA, transparent);
+
+  .sticker-free .st-icon {
+    font-size: 18px;
+    margin-bottom: 1mm;
+    color: #A78BFA;
   }
 
-  .st-icon { font-size: 20px; margin-bottom: 1mm; }
-  .st-main {
+  .sticker-free .st-main {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 16px;
+    font-size: 14px;
+    color: #150D2E;
     text-align: center;
     line-height: 1.4;
   }
-  .st-sub {
+
+  .sticker-free .st-sub {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 7px;
+    color: #8878A8;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 1mm;
   }
 
-  /* Светлый вариант */
-  .st-light { background: #F0EDFA; }
-  .st-light .st-icon { color: #A78BFA; }
-  .st-light .st-main { color: #150D2E; }
-  .st-light .st-sub  { color: #8878A8; }
+  /* === 1b. Тёмный вариант той же наклейки === */
+  .sticker-free.sticker-free-dark { background: #150D2E; }
+  .sticker-free-dark .st-icon { color: #7DD3FC; }
+  .sticker-free-dark .st-main { color: #F0EDFA; }
+  .sticker-free-dark .st-sub  { color: #A78BFA; }
 
-  /* Тёмный вариант */
-  .st-dark { background: #150D2E; }
-  .st-dark .st-icon { color: #7DD3FC; }
-  .st-dark .st-main { color: #F0EDFA; }
-  .st-dark .st-sub  { color: #A78BFA; }
+  /* === 2. "Атрибуты твоей силы" (для значков, брошей) === */
+  .sticker-power {
+    width: 70mm;
+    height: 45mm;
+    background: #150D2E;
+    gap: 2mm;
+    padding: 4mm;
+  }
+
+  .sticker-power::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E879F9, #A78BFA, transparent);
+  }
+
+  .sticker-power::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #A78BFA, #E879F9, transparent);
+  }
+
+  .sticker-power .st-icon {
+    font-size: 16px;
+    margin-bottom: 1mm;
+  }
+
+  .sticker-power .st-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #F0EDFA;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+
+  .sticker-power .st-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 7px;
+    color: #A78BFA;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1mm;
+  }
+
+  /* === 3. Ценник-наклейка === */
+  .sticker-price {
+    width: 50mm;
+    height: 30mm;
+    background: #F0EDFA;
+    gap: 1mm;
+    padding: 3mm;
+  }
+
+  .sticker-price .st-category {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 6.5px;
+    color: #A78BFA;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  .sticker-price .st-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #150D2E;
+  }
+
+  .sticker-price .st-note {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 6px;
+    color: #8878A8;
+    letter-spacing: 1px;
+  }
+
+  /* === 4. Круглый стикер === */
+  .sticker-round {
+    width: 45mm;
+    height: 45mm;
+    border-radius: 50%;
+    background: #F0EDFA;
+    gap: 1.5mm;
+    padding: 5mm;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+  }
+
+  .sticker-round .st-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 10px;
+    color: #150D2E;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .sticker-round .st-brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 6px;
+    color: #A78BFA;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* === 5. "Открытки с фразами-трансформами" === */
+  .sticker-cards {
+    width: 70mm;
+    height: 45mm;
+    background: linear-gradient(135deg, #F0EDFA 0%, #E4DDEF 100%);
+    gap: 2mm;
+    padding: 4mm;
+    border: 1px solid rgba(167, 139, 250, 0.2);
+  }
+
+  .sticker-cards .st-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    color: #150D2E;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .sticker-cards .st-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 7px;
+    color: #5A4D78;
+    letter-spacing: 1.5px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* === 6. Мини-стикер для товара === */
+  .sticker-mini {
+    width: 35mm;
+    height: 20mm;
+    background: #150D2E;
+    gap: 1mm;
+    padding: 2mm;
+  }
+
+  .sticker-mini .st-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 9px;
+    color: #A78BFA;
+    letter-spacing: 1px;
+  }
+
+  .sticker-mini .st-tag {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 5.5px;
+    color: #7DD3FC;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
 
   @media print {
     body { background: white; }
@@ -103,18 +272,80 @@
 </head>
 <body>
 
-<div class="section-label">Наклейка-призыв: бесплатные мини-картины (7 &times; 4.5 см)</div>
+<div class="section-label">Наклейка-призыв: бесплатные визитки-картинки</div>
 <div class="row">
-  <div class="sticker st-light">
+  <div class="sticker sticker-free">
     <div class="st-icon">&#10022;</div>
     <div class="st-main">Мини-картину<br>можно взять просто так</div>
     <div class="st-sub">Lilian Villaret</div>
   </div>
 
-  <div class="sticker st-dark">
+  <div class="sticker sticker-free sticker-free-dark">
     <div class="st-icon">&#10022;</div>
     <div class="st-main">Мини-картину<br>можно взять просто так</div>
     <div class="st-sub">Lilian Villaret</div>
+  </div>
+</div>
+
+<div class="section-label">Наклейка-призыв: значки и броши</div>
+<div class="row">
+  <div class="sticker sticker-power">
+    <div class="st-icon">&#9670;</div>
+    <div class="st-main">Атрибуты<br>твоей силы</div>
+    <div class="st-sub">значки &middot; броши &middot; талисманы</div>
+  </div>
+
+  <div class="sticker sticker-round" style="background:#150D2E; border-color:rgba(167,139,250,0.4);">
+    <div class="st-main" style="color:#F0EDFA;">Атрибут<br>твоей<br>силы</div>
+    <div class="st-brand" style="color:#E879F9;">Lilian Villaret</div>
+  </div>
+</div>
+
+<div class="section-label">Наклейка-призыв: открытки</div>
+<div class="row">
+  <div class="sticker sticker-cards">
+    <div class="st-main">Открытки<br>с фразами-трансформами</div>
+    <div class="st-sub">слова, которые меняют состояние<br>ручная работа &middot; limited edition</div>
+  </div>
+</div>
+
+<div class="section-label">Ценники</div>
+<div class="row">
+  <div class="sticker sticker-price">
+    <div class="st-category">открытка</div>
+    <div class="st-price">420 &#8381;</div>
+    <div class="st-note">ручная работа</div>
+  </div>
+
+  <div class="sticker sticker-price">
+    <div class="st-category">значок</div>
+    <div class="st-price">550 &#8381;</div>
+    <div class="st-note">атрибут твоей силы</div>
+  </div>
+
+  <div class="sticker sticker-price">
+    <div class="st-category">магнит</div>
+    <div class="st-price">550 &#8381;</div>
+    <div class="st-note">ручная работа</div>
+  </div>
+
+  <div class="sticker sticker-price">
+    <div class="st-category">картина</div>
+    <div class="st-price">2 000 &#8381;</div>
+    <div class="st-note">абстракция &middot; интерьер</div>
+  </div>
+</div>
+
+<div class="section-label">Мини-стикер на товар &laquo;ручная работа&raquo; (3.5 &times; 2 см)</div>
+<div class="row">
+  <div class="sticker sticker-mini">
+    <div class="st-brand">LiVi</div>
+    <div class="st-tag">handmade &middot; spb</div>
+  </div>
+
+  <div class="sticker sticker-mini" style="background:#F0EDFA;">
+    <div class="st-brand" style="color:#150D2E;">LiVi</div>
+    <div class="st-tag" style="color:#5A4D78;">handmade &middot; spb</div>
   </div>
 </div>
 
