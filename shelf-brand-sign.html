@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Табличка для полки — Lilian Villaret</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #F0EDFA;
+    --bg-2: #E4DDEF;
+    --ink: #150D2E;
+    --ink-dim: #5A4D78;
+    --ink-faint: #8878A8;
+    --neon-violet: #A78BFA;
+    --neon-sky: #7DD3FC;
+    --neon-pink: #E879F9;
+    --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+
+  body {
+    background: var(--bg-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 48px;
+    padding: 40px 20px;
+    font-family: var(--sans);
+  }
+
+  .label {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* === ГОРИЗОНТАЛЬНАЯ — слим, под длину стенки полки (23 × 5 см) === */
+  .sign-h {
+    width: 230mm;
+    height: 50mm;
+    background: var(--bg);
+    border-radius: 3mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5mm;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(90, 77, 120, 0.1);
+    overflow: hidden;
+  }
+
+  .sign-h::before,
+  .sign-h::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-sky), var(--neon-violet), transparent);
+  }
+  .sign-h::before { top: 0; }
+  .sign-h::after { bottom: 0; }
+
+  .sign-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--ink);
+    letter-spacing: 3px;
+  }
+
+  .sign-role {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 3px;
+  }
+
+  .sign-line {
+    width: 40mm;
+    height: 0.5px;
+    background: linear-gradient(90deg, transparent, var(--neon-violet), transparent);
+  }
+
+  .sign-slogan {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-dim);
+    letter-spacing: 2px;
+  }
+
+  /* === ВЕРТИКАЛЬНАЯ (8 × 12 см) === */
+  .sign-v {
+    width: 80mm;
+    height: 120mm;
+    background: var(--bg);
+    border-radius: 3mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4mm;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(90, 77, 120, 0.1);
+    overflow: hidden;
+  }
+
+  .sign-v::before,
+  .sign-v::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-sky), var(--neon-violet), transparent);
+  }
+  .sign-v::before { top: 0; }
+  .sign-v::after { bottom: 0; }
+
+  .sign-v .sign-name {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .sign-v .sign-role {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .sign-v .sign-slogan {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.6;
+    padding: 0 5mm;
+  }
+
+  .sign-v .sign-manifesto {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-dim);
+    text-align: center;
+    line-height: 1.7;
+    padding: 0 6mm;
+    border-top: 0.5px solid rgba(167, 139, 250, 0.3);
+    padding-top: 3mm;
+    margin-top: 1mm;
+  }
+
+  .sign-v .sign-qr-hint {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 8px;
+    color: var(--neon-violet);
+    letter-spacing: 1.5px;
+    margin-top: 2mm;
+  }
+
+  /* === ТЁМНАЯ — слим, под длину стенки полки (23 × 5 см) === */
+  .sign-dark {
+    width: 230mm;
+    height: 50mm;
+    background: var(--ink);
+    border-radius: 3mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3mm;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(21, 13, 46, 0.3);
+    overflow: hidden;
+  }
+
+  .sign-dark::before,
+  .sign-dark::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--neon-violet), var(--neon-sky), var(--neon-pink), var(--neon-violet), transparent);
+  }
+  .sign-dark::before { top: 0; }
+  .sign-dark::after { bottom: 0; }
+
+  .sign-dark .sign-name {
+    color: var(--bg);
+  }
+
+  .sign-dark .sign-role {
+    color: var(--neon-violet);
+  }
+
+  .sign-dark .sign-line {
+    background: linear-gradient(90deg, transparent, var(--neon-sky), transparent);
+  }
+
+  .sign-dark .sign-slogan {
+    color: var(--neon-violet);
+  }
+
+  @media print {
+    body { background: white; }
+    .label { display: none; }
+    .sign-h, .sign-v, .sign-dark { box-shadow: none; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="label">Табличка для полки &mdash; горизонтальная, под длину стенки (23 &times; 5 см)</div>
+<div class="sign-h">
+  <div class="sign-name">Лилиан Вилларе</div>
+  <div class="sign-role">интерьерные картины в жанре флюид-арт</div>
+  <div class="sign-line"></div>
+  <div class="sign-slogan">Придаю чувствам форму</div>
+</div>
+
+<div class="label">Табличка вертикальная (8 &times; 12 см)</div>
+<div class="sign-v">
+  <div class="sign-name">Лилиан Вилларе</div>
+  <div class="sign-role">интерьерные картины в жанре флюид-арт</div>
+  <div class="sign-line"></div>
+  <div class="sign-slogan">Придаю чувствам форму</div>
+  <div class="sign-manifesto">Вы ощущаете &mdash; я проявляю.<br>Каждый предмет &mdash; часть моей истории.</div>
+  <div class="sign-qr-hint">&#9679; сайт и контакты по QR на визитке</div>
+</div>
+
+<div class="label">Тёмный вариант (для светлых полок)</div>
+<div class="sign-dark">
+  <div class="sign-name">Лилиан Вилларе</div>
+  <div class="sign-role">интерьерные картины в жанре флюид-арт</div>
+  <div class="sign-line"></div>
+  <div class="sign-slogan">Придаю чувствам форму</div>
+</div>
+
+</body>
+</html>
